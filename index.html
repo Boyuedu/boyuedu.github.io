@@ -10,12 +10,21 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 2em;
-      line-height: 1.6;
       background-color: #f9f9f9;
+      line-height: 1.6;
     }
     header {
       text-align: center;
       margin-bottom: 2em;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #007acc;
     }
     h1 {
       font-size: 2.5em;
@@ -26,23 +35,19 @@
       border-bottom: 2px solid #ddd;
       padding-bottom: 0.3em;
     }
+    section {
+      margin-bottom: 2.5em;
+    }
     ul {
       padding-left: 1.2em;
     }
     a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    section {
-      margin-bottom: 2em;
+      color: #007acc;
     }
     footer {
       text-align: center;
-      color: #666;
       font-size: 0.9em;
+      color: #666;
       margin-top: 4em;
     }
   </style>
@@ -50,46 +55,61 @@
 <body>
   <header>
     <h1>Boyue Du</h1>
-    <p>Electrical Engineer | UCLA M.S. Student | Automotive Enthusiast</p>
+    <p>Electrical Engineer | UCLA M.S. Student | Startup Founder</p>
   </header>
 
-  <section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a passionate electrical engineer with a strong interest in power systems, robotics, and automotive technology. Currently pursuing my M.S. in Electrical and Computer Engineering at UCLA, I’m working toward building smarter and more efficient systems in the automotive industry.
+      I am a passionate electrical engineer with a focus on power systems, robotics, and automotive technology. Currently pursuing my M.S. in Electrical and Computer Engineering at UCLA, I bring a unique blend of technical skill, creativity, and entrepreneurial spirit.
     </p>
   </section>
 
-  <section>
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>University of California, Los Angeles (UCLA)</strong> — M.S. in ECE (2025–)</li>
+      <li><strong>University of Wisconsin–Madison</strong> — B.S. in Electrical Engineering, with honors (2021–2025)</li>
+      <li>Recipient of Novotny, Donald W. Scholarship; Completed advanced coursework in control systems, robotics, and signal processing</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Founder — Congzhi Shuyuan</strong>: A cultural café/bar blending traditional Chinese aesthetics, literature, and social space design</li>
+      <li><strong>Student Researcher — ECE204 & ECE411 Projects</strong>: Developed machine learning models, robotic systems, and power control techniques</li>
+    </ul>
+  </section>
+
+  <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><strong>🔧 Self-Balancing Robot</strong> — Implemented PID control, sensor fusion, and real-time balancing (ECE370)</li>
-      <li><strong>📊 Student Performance Prediction</strong> — Used machine learning to forecast grades based on academic and social data (ECE204)</li>
-      <li><strong>🚗 Induction Motor Control</strong> — Built and tested lab-scale motor control system with inverter and sensor feedback (ECE411)</li>
+      <li><strong>Self-Balancing Robot</strong> — Implemented PID control and sensor fusion (ECE370)</li>
+      <li><strong>Student Performance Predictor</strong> — Built ML model using XGBoost and PCA for academic outcome prediction</li>
+      <li><strong>Induction Motor Controller</strong> — Real-time inverter-based control system with feedback (ECE411)</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Resume</h2>
-    <p><a href="resume_boyue.pdf" target="_blank">📄 Download My Resume</a></p>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p>A curated view of my life, travels, and inspirations (coming soon).</p>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>⚙️ Control Systems, Power Electronics, Signal Processing</li>
-      <li>🧠 Python (NumPy, pandas, scikit-learn), MATLAB, C++, Java</li>
-      <li>🛠️ ROS2, Git, LTSpice, LabVIEW</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Activities</h2>
-    <ul>
-      <li>⚽ Represented the Madison Chinese Soccer Team (2021–2025)</li>
-      <li>📚 Founder of 从知书院 — Chinese cultural café/bar</li>
-      <li>🚙 Completed 10-day road trip across U.S. with family</li>
-    </ul>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:boyue.du@gmail.com">boyue.du@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/Boyuedu" target="_blank">Boyuedu</a></p>
+    <p>LinkedIn: <a href="#">(Add your link)</a></p>
   </section>
 
   <footer>
