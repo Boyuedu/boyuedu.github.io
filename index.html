@@ -2,49 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boyue Du | Portfolio</title>
+  <title>Boyue Du | PCB Navigation</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2em;
-      background-color: #f9f9f9;
       text-align: center;
+      background-color: #f4f4f4;
+      padding: 2em;
+    }
+    img {
+      width: 800px;
+      max-width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 10px;
     }
     h1 {
-      font-size: 2.8em;
-      margin-bottom: 0.2em;
-    }
-    p {
-      font-size: 1.2em;
-      color: #555;
-    }
-    nav a {
-      display: inline-block;
-      margin: 10px 15px;
-      text-decoration: none;
-      color: #007acc;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      margin-bottom: 1em;
     }
   </style>
 </head>
 <body>
-  <h1>Boyue Du</h1>
-  <p>Electrical Engineer | UCLA M.S. Student | Startup Founder</p>
+  <h1>Boyue Du — Portfolio Navigation</h1>
+  <p>Click a component on the board to explore.</p>
 
-  <nav>
-    <a href="about.html">About</a>
-    <a href="education.html">Education</a>
-    <a href="experience.html">Experience</a>
-    <a href="projects.html">Projects</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <img src="pcb_navigation.png" usemap="#pcblinks" alt="PCB Schematic Navigation" />
+
+  <map name="pcblinks">
+    <!-- Adjust coords based on actual positions in the image -->
+    <area shape="rect" coords="120,130,240,170" href="about.html" alt="About" />
+    <area shape="rect" coords="270,130,390,170" href="education.html" alt="Education" />
+    <area shape="rect" coords="420,130,540,170" href="experience.html" alt="Experience" />
+    <area shape="rect" coords="270,230,390,270" href="projects.html" alt="Projects" />
+    <area shape="rect" coords="420,230,540,270" href="gallery.html" alt="Gallery" />
+    <area shape="rect" coords="600,150,740,200" href="contact.html" alt="Contact" />
+  </map>
 </body>
 </html>
