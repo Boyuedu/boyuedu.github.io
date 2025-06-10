@@ -24,6 +24,17 @@
       letter-spacing: 1px;
       margin-bottom: 1em;
     }
+    area {
+  cursor: pointer;
+    }
+    .highlight {
+     position: absolute;
+     pointer-events: none;
+     border: 2px solid #00ffff;
+     border-radius: 8px;
+     box-shadow: 0 0 8px #00ffff;
+     display: none;
+    }
   </style>
 </head>
 <body>
@@ -44,5 +55,33 @@
     <area shape="rect" coords="519,405,635,456" href="gallery.html" alt="Gallery" />
     <area shape="rect" coords="746,406,880,455" href="contact.html" alt="Contact" />
   </map>
+  <div id="hoverHighlight" class="highlight"></div>
+
+<script>
+  const map = document.querySelector("map");
+  const highlight = document.getElementById("hoverHighlight");
+  const image = document.querySelector("img");
+
+  map.querySelectorAll("area").forEach(area => {
+    area.addEventListener("mouseenter", () => {
+      const coords = area.coords.split(',').map(Number);
+      const [x1, y1, x2, y2] = coords;
+      const imgRect = image.getBoundingClientRect();
+
+      const width = x2 - x1;
+      const height = y2 - y1;
+
+      highlight.style.left = `${imgRect.left + x1}px`;
+      highlight.style.top = `${imgRect.top + y1 + window.scrollY}px`;
+      highlight.style.width = `${width}px`;
+      highlight.style.height = `${height}px`;
+      highlight.style.display = "block";
+    });
+
+    area.addEventListener("mouseleave", () => {
+      highlight.style.display = "none";
+    });
+  });
+</script>
 </body>
 </html>
