@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
+  <title>Boyue Du | Portfolio</title>
   <style>
-    /* Basic CSS styles */
     body {
       font-family: Arial, sans-serif;
-      margin: 2em;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2em;
       line-height: 1.6;
+      background-color: #f9f9f9;
     }
     header {
       text-align: center;
@@ -17,30 +19,81 @@
     }
     h1 {
       font-size: 2.5em;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3em;
+    }
+    ul {
+      padding-left: 1.2em;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
     section {
       margin-bottom: 2em;
+    }
+    footer {
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 4em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <p>Your profession or what you're showcasing</p>
+    <h1>Boyue Du</h1>
+    <p>Electrical Engineer | UCLA M.S. Student | Automotive Enthusiast</p>
   </header>
 
   <section>
     <h2>About Me</h2>
-    <p>Write a short bio here about yourself!</p>
+    <p>
+      I am a passionate electrical engineer with a strong interest in power systems, robotics, and automotive technology. Currently pursuing my M.S. in Electrical and Computer Engineering at UCLA, I’m working toward building smarter and more efficient systems in the automotive industry.
+    </p>
   </section>
 
   <section>
-    <h2>Portfolio</h2>
-    <p>Showcase your work here.</p>
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>🔧 Self-Balancing Robot</strong> — Implemented PID control, sensor fusion, and real-time balancing (ECE370)</li>
+      <li><strong>📊 Student Performance Prediction</strong> — Used machine learning to forecast grades based on academic and social data (ECE204)</li>
+      <li><strong>🚗 Induction Motor Control</strong> — Built and tested lab-scale motor control system with inverter and sensor feedback (ECE411)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Resume</h2>
+    <p><a href="resume_boyue.pdf" target="_blank">📄 Download My Resume</a></p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>⚙️ Control Systems, Power Electronics, Signal Processing</li>
+      <li>🧠 Python (NumPy, pandas, scikit-learn), MATLAB, C++, Java</li>
+      <li>🛠️ ROS2, Git, LTSpice, LabVIEW</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Activities</h2>
+    <ul>
+      <li>⚽ Represented the Madison Chinese Soccer Team (2021–2025)</li>
+      <li>📚 Founder of 从知书院 — Chinese cultural café/bar</li>
+      <li>🚙 Completed 10-day road trip across U.S. with family</li>
+    </ul>
   </section>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    &copy; 2025 Boyue Du. All rights reserved.
   </footer>
 </body>
 </html>
