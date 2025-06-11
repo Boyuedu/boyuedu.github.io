@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Education | Boyue Du</title>
   <style>
     body {
-      font-family: Arial;
-      max-width: 900px;
-      margin: auto;
-      padding: 2em;
+      font-family: Arial, sans-serif;
+      margin: 0;
       background: #f9f9f9;
       line-height: 1.6;
+      color: #000;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2em;
+      background: #fff;
+      padding: 1em 2em;
+      border-bottom: 1px solid #ccc;
     }
+
     .brand {
       font-weight: bold;
       font-size: 1.2em;
       color: #000;
     }
+
     .nav-links a {
-      margin: 0 10px;
+      margin-left: 20px;
       text-decoration: none;
       color: #007acc;
+      font-size: 1em;
     }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2em;
+    }
+
     h2 {
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.2em;
+      margin-top: 2em;
     }
+
     .course-link {
       display: inline-block;
       margin-top: 0.5em;
@@ -41,6 +55,7 @@
       text-decoration: none;
       border-radius: 5px;
     }
+
     .course-link:hover {
       background-color: #005c99;
     }
@@ -60,24 +75,26 @@
     </div>
   </nav>
 
-  <h2>Education</h2>
-  <ul>
-    <li><strong>University of California-Los Angeles (UCLA)</strong> — M.S. in Electrical and Computer Engineering (2025–)</li>
-    <li><strong>University of Wisconsin-Madison</strong> — B.S. in Electrical Engineering (Sep 2021–May 2025)<br>
-      Field: Power & Machines, System & Controls, Robotics, Digital Signal Processing, Circuits & Devices
-    </li>
-  </ul>
+  <div class="container">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>University of California-Los Angeles (UCLA)</strong> — M.S. in Electrical and Computer Engineering (2025–)</li>
+      <li><strong>University of Wisconsin-Madison</strong> — B.S. in Electrical Engineering (Sep 2021–May 2025)<br>
+        Field: Power & Machines, System & Controls, Robotics, Digital Signal Processing, Circuits & Devices
+      </li>
+    </ul>
 
-  <h2>Awards</h2>
-  <ul>
-    <li>Novotny, Donald W. Scholarship (July 2024)</li>
-    <li>WV Distinguished Scholarship (July 2024)</li>
-    <li>WV Distinguished Scholarship (August 2023)</li>
-  </ul>
-  <p><em>All scholarships above were awarded by the Department of Electrical and Computer Engineering at the University of Wisconsin–Madison.</em></p>
+    <h2>Awards</h2>
+    <ul>
+      <li>Novotny, Donald W. Scholarship (July 2024)</li>
+      <li>WV Distinguished Scholarship (July 2024)</li>
+      <li>WV Distinguished Scholarship (August 2023)</li>
+    </ul>
+    <p><em>All scholarships above were awarded by the Department of Electrical and Computer Engineering at the University of Wisconsin–Madison.</em></p>
 
-  <h2>Coursework</h2>
-  <p>Click below to view a full list of courses I've completed:</p>
-  <a class="course-link" href="coursework.html" target="_blank">View Courses</a>
+    <h2>Coursework</h2>
+    <p>Click below to view a full list of courses I've completed:</p>
+    <a class="course-link" href="coursework.html" target="_blank">View Courses</a>
+  </div>
 </body>
 </html>
