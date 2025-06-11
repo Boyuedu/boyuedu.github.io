@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Art Design Gallery | Boyue Du</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(180deg, #0f172a, #1e293b);
+      color: white;
+      margin: 0;
+      padding: 2em;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .description {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: 0 auto 1em auto;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .instruction {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95em;
+      color: #94a3b8;
+      margin-bottom: 2.5em;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+    }
+
+    .grid img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #334155;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #38bdf8;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 5%;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 10px;
+      box-shadow: 0 0 30px #38bdf8;
+      transition: 0.3s;
+      cursor: zoom-out;
+    }
+  </style>
+</head>
+<body>
+  <h1>Engineering Album</h1>
+
+  <div class="description">
+    This collection showcases the projects and experiments I’ve worked on in both engineering labs and real-world environments. 
+    From circuit design and control systems to robotics and machine learning applications, each photo captures a moment of 
+    hands-on discovery.
+  </div>
+
+  <div class="instruction">Double click each image to zoom in</div>
+
+  <div class="grid">
+    <img src="engineering_photos/Engineering1.jpg" alt="ENGR 1">
+    <img src="engineering_photos/Engineering2.jpg" alt="ENGR 2">
+    <img src="engineering_photos/Engineering3.mp4" alt="ENGR 3">
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modal-img" class="modal-content" alt="Zoomed Art">
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+
+    document.querySelectorAll('.grid img').forEach(img => {
+      img.ondblclick = () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      };
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
