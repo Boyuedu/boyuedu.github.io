@@ -4,10 +4,44 @@
   <meta charset="UTF-8">
   <title>Contact | Boyue Du</title>
   <style>
-    body { font-family: Arial; max-width: 900px; margin: auto; padding: 2em; background: #f9f9f9; line-height: 1.6; }
-    nav { text-align: center; margin-bottom: 2em; }
-    nav a { margin: 0 10px; text-decoration: none; color: #007acc; }
-    h2 { border-bottom: 2px solid #ccc; padding-bottom: 0.2em; }
+    body {
+      font-family: Arial;
+      max-width: 900px;
+      margin: auto;
+      padding: 2em;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #007acc;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.2em;
+    }
+    .button-links {
+      margin-top: 1em;
+    }
+    .btn-link {
+      display: inline-block;
+      margin: 6px 10px;
+      padding: 10px 16px;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn-link:hover {
+      background-color: #005c99;
+    }
   </style>
 </head>
 <body>
@@ -25,8 +59,12 @@
   <p><strong>Preferred Email:</strong> <a href="mailto:bdu25@ucla.edu">bdu25@ucla.edu</a></p>
   <p><strong>Personal Email:</strong> <a href="mailto:bdu021118@gmail.com">bdu021118@gmail.com</a></p>
   <p><strong>Tel:</strong> <a href="tel:+16086981543">+1 (608) 698-1543</a></p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/Boyuedu" target="_blank">github.com/Boyuedu</a></p>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/david-du-9b80a4247/" target="_blank">linkedin.com/in/david-du-9b80a4247</a></p>
+
+  <div class="button-links">
+    <a class="btn-link" href="https://github.com/Boyuedu" target="_blank">GitHub</a>
+    <a class="btn-link" href="https://www.linkedin.com/in/david-du-9b80a4247/" target="_blank">LinkedIn</a>
+  </div>
+
   <p style="font-size: 1.3em; font-weight: 500; color: #333;"><em>Feel free to contact me any time!</em></p>
 </body>
 </html>
