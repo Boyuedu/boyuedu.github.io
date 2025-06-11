@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Art Design Gallery | Boyue Du</title>
+  <title>Engineering Album | Boyue Du</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
@@ -46,7 +46,8 @@
       justify-content: center;
     }
 
-    .grid img {
+    .grid img,
+    .grid video {
       width: 300px;
       height: 200px;
       object-fit: cover;
@@ -56,7 +57,8 @@
       cursor: pointer;
     }
 
-    .grid img:hover {
+    .grid img:hover,
+    .grid video:hover {
       transform: scale(1.05);
       box-shadow: 0 0 12px #38bdf8;
     }
@@ -99,7 +101,10 @@
   <div class="grid">
     <img src="engineering_photos/Engineering1.jpg" alt="ENGR 1">
     <img src="engineering_photos/Engineering2.jpg" alt="ENGR 2">
-    <img src="engineering_photos/Engineering3.mp4" alt="ENGR 3">
+    <video controls>
+      <source src="engineering_photos/Engineering3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   <!-- Modal -->
