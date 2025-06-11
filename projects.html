@@ -4,16 +4,119 @@
   <meta charset="UTF-8">
   <title>Projects | Boyue Du</title>
   <style>
-    body { font-family: Arial; max-width: 900px; margin: auto; padding: 2em; background: #f9f9f9; line-height: 1.6; }
-    nav { text-align: center; margin-bottom: 2em; }
-    nav a { margin: 0 10px; text-decoration: none; color: #007acc; }
-    h2 { border-bottom: 2px solid #ccc; padding-bottom: 0.2em; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2em 2em;
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-left {
+      font-weight: bold;
+      font-size: 1.3em;
+      color: #000;
+    }
+
+    .nav-right a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #007acc;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+
+    .nav-right a:hover {
+      color: #005c99;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2em;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 1em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3em;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
+    }
+
+    .project-card {
+      background-color: white;
+      padding: 1.5em;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .project-title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      font-size: 1.1em;
+    }
+
+    .project-desc {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .project-tag {
+      font-style: italic;
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 0.5em;
+    }
+
+    .project-links {
+      margin-top: 1em;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 6px 12px;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+    }
+
+    .project-links a:hover {
+      background-color: #005c99;
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="brand">Boyue Du</div>
-    <div class="nav-links">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">Boyue Du</div>
+    <div class="nav-right">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="education.html">Education</a>
@@ -23,12 +126,44 @@
       <a href="contact.html">Contact</a>
     </div>
   </nav>
-  
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>Self-Balancing Robot</strong> — PID control + IMU sensor fusion (ECE370)</li>
-    <li><strong>Student Performance Prediction</strong> — XGBoost model using academic/social features (ECE204)</li>
-    <li><strong>Induction Motor Control</strong> — Real-time control using inverter and feedback sensors (ECE411)</li>
-  </ul>
+
+  <!-- Content -->
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-title">Self-Balancing Robot</div>
+        <div class="project-desc">
+          PID control and IMU sensor fusion for real-time balancing on two wheels.
+        </div>
+        <div class="project-tag">(ECE370)</div>
+        <div class="project-links">
+          <!-- Optional -->
+          <!-- <a href="#">GitHub</a> -->
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">Student Performance Prediction</div>
+        <div class="project-desc">
+          Built an XGBoost model using academic, demographic, and behavioral features to forecast student grades.
+        </div>
+        <div class="project-tag">(ECE204)</div>
+        <div class="project-links"></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">Induction Motor Control</div>
+        <div class="project-desc">
+          Developed a real-time controller using inverter and sensor feedback to manage torque and speed.
+        </div>
+        <div class="project-tag">(ECE411)</div>
+        <div class="project-links"></div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
