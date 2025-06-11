@@ -4,23 +4,106 @@
   <meta charset="UTF-8">
   <title>About Me | Boyue Du</title>
   <style>
-    body { font-family: Arial; max-width: 900px; margin: auto; padding: 2em; background: #f9f9f9; line-height: 1.6; }
-    nav { text-align: center; margin-bottom: 2em; }
-    nav a { margin: 0 10px; text-decoration: none; color: #007acc; }
-    h2 { border-bottom: 2px solid #ccc; padding-bottom: 0.2em; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #007acc;
+      color: white;
+      padding: 1em 2em;
+    }
+
+    nav .name {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    nav .links a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2em;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.2em;
+      margin-bottom: 1em;
+    }
+
+    .intro {
+      font-size: 1.1em;
+      margin-bottom: 2em;
+    }
+
+    .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      justify-content: center;
+      margin-bottom: 2em;
+    }
+
+    .photo-grid img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+
+    .paragraphs p {
+      margin-bottom: 1.5em;
+    }
   </style>
 </head>
 <body>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="education.html">Education</a>
-    <a href="experience.html">Experience</a>
-    <a href="projects.html">Projects</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+    <div class="name">Boyue Du</div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="education.html">Education</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
-  <h2>About Me</h2>
-  <p>I am a passionate electrical engineer with a focus on power systems, robotics, and automotive applications. Currently pursuing my M.S. in ECE at UCLA, I blend strong technical skills with creativity and leadership. I aim to design meaningful, efficient, and sustainable technologies.</p>
+
+  <div class="container">
+    <h2>About Me</h2>
+
+    <div class="intro">
+      <p>I’m Boyue Du, an electrical engineer passionate about intelligent electronics, power systems, and their applications in the automotive industry. I recently earned my B.S. in Electrical Engineering from the University of Wisconsin–Madison, where I developed advanced knowledge and hands-on experience in signal processing, machine learning, and applied physics. In Fall 2025, I will begin my M.S. in Electrical and Computer Engineering at UCLA, focusing on power system design and automotive innovation. </p>
+    </div>
+
+    <div class="photo-grid">
+      <img src="about_photos/photo1.jpg" alt="Individual photo">
+      <img src="about_photos/photo2.jpg" alt="Individual photo">
+      <img src="about_photos/photo3.jpg" alt="Make your mark on the world">
+    </div>
+
+    <div class="paragraphs">
+      <p>In my undergraduate life, curiosity led me to find my career path: engineering. Despite the challenging courses and heavy workload, I found joy in this process. Every night, when I walked tiredly to my dorm from Memorial Library, I felt enriched because I had learned something I didn't know before. Whenever I encountered elegant formulas derived by scientists like Fourier and Maxwell, whom I admired in childhood, I realized I was doing something meaningful. When I learned how engine and transmission operate in a car, I felt I moved closer to my goal. Curiosity and interest drove me to go forward. </p>
+
+      <p>In June 2023, during a break from school, I launched my own startup: 从知书院 (Congzhi), a Chinese-style multifunctional space that blends drinks, dining, music, literature, and bar culture together. Designed to attract young urban professionals, the space was more than a café—it was a hub for creativity and conversation. I managed everything from branding and interior design to kitchen operations. This entrepreneurial journey taught me how to transform ideas into real-world value and strengthened my belief in the power of interdisciplinary thinking. </p>
+
+      <p>On my first day as a freshman at UW–Madison, I saw the words engraved on a railing at Alumni Park: “Make your mark on the world.” Four years later, I haven’t changed my goal—only deepened my understanding of what it means. Now, with a foundation built on curiosity, perseverance, and purpose, I’m ready to leave that mark—through engineering, innovation, and impact.</p>
+    </div>
+  </div>
 </body>
 </html>
