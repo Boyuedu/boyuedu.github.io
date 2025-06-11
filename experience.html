@@ -40,6 +40,7 @@
     }
 
     h2 {
+      font-size: 1.5em;
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.2em;
       margin-bottom: 1em;
@@ -47,14 +48,19 @@
 
     ul {
       padding-left: 1.2em;
+      margin-top: 0;
     }
 
     li {
       margin-bottom: 1.2em;
     }
 
-    strong {
-      font-size: 1.1em;
+    li strong {
+      display: block;
+      font-weight: bold;
+      font-size: 1em; /* Make same as normal text for consistent size */
+      margin-bottom: 0.3em;
+      color: #000;
     }
   </style>
 </head>
@@ -75,13 +81,18 @@
   <div class="container">
     <h2>Business Experience</h2>
     <ul>
-      <li><strong>Business Developer — NaaS Technology</strong>: Engaged in the business development across North America. Exhibited at CES 2024 and provided technical consultations on the newest standing and moveable EV chargers</li>
+      <li>
+        <strong>Business Developer — NaaS Technology</strong>
+        Engaged in business development across North America. Exhibited at CES 2024 and provided technical consultations on the newest standing and moveable EV chargers.
+      </li>
     </ul>
-
 
     <h2>Academic Experience</h2>
     <ul>
-      <li><strong>Undergraduate Researcher — CATs Lab at UW-Madison</strong>: Implemented independent research of the ToF sensor. Recorded data and trained neural network. Designed classifiers to achieve accurate capture of human faces.</li>
+      <li>
+        <strong>Undergraduate Researcher — CATs Lab at UW-Madison</strong>
+        Implemented independent research of the ToF sensor. Recorded data and trained neural network. Designed classifiers to achieve accurate capture of human faces.
+      </li>
     </ul>
   </div>
 </body>
