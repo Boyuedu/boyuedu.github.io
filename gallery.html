@@ -15,15 +15,22 @@
       flex-direction: column;
     }
 
+    .header-strip {
+      background-color: #1e293b;
+      text-align: center;
+      padding: 2em 0 1em;
+      border-bottom: 2px solid #334155;
+    }
+
+    .header-strip h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
     main {
       flex: 1;
       padding: 2em;
       text-align: center;
-    }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 1.5em;
     }
 
     .gallery-grid {
@@ -72,8 +79,11 @@
   </style>
 </head>
 <body>
-  <main>
+  <div class="header-strip">
     <h1>Explore My Gallery</h1>
+  </div>
+
+  <main>
     <div class="gallery-grid">
       <a href="gallery_landscape.html" class="gallery-card">
         <img src="gallery_landscape.jpg" alt="Landscape">
@@ -89,6 +99,7 @@
       </a>
     </div>
   </main>
+
   <footer>
     © 2025 Boyue Du | Designed with HTML & CSS
   </footer>
