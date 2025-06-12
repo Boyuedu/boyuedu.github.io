@@ -5,34 +5,18 @@
   <title>Gallery | Boyue Du</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
+    body {
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(180deg, #0f172a, #1e293b);
       color: white;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .header-strip {
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
-      text-align: center;
-      padding: 3em 0 1.5em; /* Added top space */
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .header-strip h1 {
-      font-size: 3em;
       margin: 0;
-      color: #f1f5f9;
-      text-shadow: 1px 1px 2px #00000040;
-    }
-
-    main {
-      flex: 1;
       padding: 2em;
       text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 1.5em;
     }
 
     .gallery-grid {
@@ -73,35 +57,28 @@
     }
 
     footer {
-      text-align: center;
-      padding: 1em 0;
+      margin-top: 3em;
       font-size: 0.9em;
       color: #94a3b8;
     }
   </style>
 </head>
 <body>
-  <div class="header-strip">
-    <h1>Explore My Gallery</h1>
+  <h1>Explore My Gallery</h1>
+  <div class="gallery-grid">
+    <a href="gallery_landscape.html" class="gallery-card">
+      <img src="gallery_landscape.jpg" alt="Landscape">
+      <h2>Landscape</h2>
+    </a>
+    <a href="gallery_art.html" class="gallery-card">
+      <img src="gallery_art.jpg" alt="Art Design">
+      <h2>Art Design</h2>
+    </a>
+    <a href="gallery_engineering.html" class="gallery-card">
+      <img src="gallery_engineering.jpg" alt="Engineering">
+      <h2>Engineering</h2>
+    </a>
   </div>
-
-  <main>
-    <div class="gallery-grid">
-      <a href="gallery_landscape.html" class="gallery-card">
-        <img src="gallery_landscape.jpg" alt="Landscape">
-        <h2>Landscape</h2>
-      </a>
-      <a href="gallery_art.html" class="gallery-card">
-        <img src="gallery_art.jpg" alt="Art Design">
-        <h2>Art Design</h2>
-      </a>
-      <a href="gallery_engineering.html" class="gallery-card">
-        <img src="gallery_engineering.jpg" alt="Engineering">
-        <h2>Engineering</h2>
-      </a>
-    </div>
-  </main>
-
   <footer>
     © 2025 Boyue Du | Designed with HTML & CSS
   </footer>
