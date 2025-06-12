@@ -5,11 +5,18 @@
   <title>Gallery | Boyue Du</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
+      height: 100%;
+      margin: 0;
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(180deg, #0f172a, #1e293b);
       color: white;
-      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
       padding: 2em;
       text-align: center;
     }
@@ -55,24 +62,33 @@
       object-fit: cover;
       border-radius: 14px;
     }
+
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      font-size: 0.9em;
+      color: #94a3b8;
+    }
   </style>
 </head>
 <body>
-  <h1>Explore My Gallery</h1>
-  <div class="gallery-grid">
-    <a href="gallery_landscape.html" class="gallery-card">
-      <img src="gallery_landscape.jpg" alt="Landscape">
-      <h2>Landscape</h2>
-    </a>
-    <a href="gallery_art.html" class="gallery-card">
-      <img src="gallery_art.jpg" alt="Art Design">
-      <h2>Art Design</h2>
-    </a>
-    <a href="gallery_engineering.html" class="gallery-card">
-      <img src="gallery_engineering.jpg" alt="Engineering">
-      <h2>Engineering</h2>
-    </a>
-  </div>
+  <main>
+    <h1>Explore My Gallery</h1>
+    <div class="gallery-grid">
+      <a href="gallery_landscape.html" class="gallery-card">
+        <img src="gallery_landscape.jpg" alt="Landscape">
+        <h2>Landscape</h2>
+      </a>
+      <a href="gallery_art.html" class="gallery-card">
+        <img src="gallery_art.jpg" alt="Art Design">
+        <h2>Art Design</h2>
+      </a>
+      <a href="gallery_engineering.html" class="gallery-card">
+        <img src="gallery_engineering.jpg" alt="Engineering">
+        <h2>Engineering</h2>
+      </a>
+    </div>
+  </main>
   <footer>
     © 2025 Boyue Du | Designed with HTML & CSS
   </footer>
