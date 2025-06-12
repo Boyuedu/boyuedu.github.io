@@ -47,20 +47,39 @@
     }
 
     ul {
-      padding-left: 1.2em;
-      margin-top: 0;
+      padding-left: 0;
+      list-style: none;
     }
 
     li {
-      margin-bottom: 1.2em;
+      margin-bottom: 2em;
     }
 
-    li strong {
+    .experience-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .experience-entry img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    .experience-text strong {
       display: block;
       font-weight: bold;
-      font-size: 1em; /* Make same as normal text for consistent size */
+      font-size: 1em;
       margin-bottom: 0.3em;
       color: #000;
+    }
+
+    .experience-text span {
+      font-weight: normal;
+      color: #555;
     }
   </style>
 </head>
@@ -82,37 +101,62 @@
     <h2>Business Experience</h2>
     <ul>
       <li>
-        <strong>Business Developer - NaaS Technology</strong>
-        <span style="font-weight: normal; color: #555;"> | Nov 2023-Jan 2024</span><br>
-         Engaged in business development across North America. Exhibited at CES 2024 and provided technical consultations on the newest standing and moveable EV chargers.
+        <div class="experience-entry">
+          <img src="experience1.jpg" alt="CES Booth">
+          <div class="experience-text">
+            <strong>Business Developer - NaaS Technology</strong>
+            <span>| Nov 2023-Jan 2024</span><br>
+            Engaged in business development across North America. Exhibited at CES 2024 and provided technical consultations on the newest standing and moveable EV chargers.
+          </div>
+        </div>
       </li>
 
       <li>
-        <strong>Founder - Congzhi Cafe Space</strong>
-        <span style="font-weight: normal; color: #555;"> | Jun 2023-Current</span><br>
-         Established shop integrating drinks, dining, literature, music, and ancient Chinese culture. Developed a comprehensive business plan for profiting from both retailing and high-end group activities.
-         Trained employees in preparing drinks and desserts, handling daily tasks, and communicating with customers. Recorded, edited and uploaded videos and vlogs on official account.
+        <div class="experience-entry">
+          <img src="experience2.jpg" alt="Congzhi Cafe"> <!-- Replace this -->
+          <div class="experience-text">
+            <strong>Founder - Congzhi Cafe Space</strong>
+            <span>| Jun 2023-Current</span><br>
+            Established shop integrating drinks, dining, literature, music, and ancient Chinese culture. Developed a comprehensive business plan for profiting from both retailing and high-end group activities.
+            Trained employees in preparing drinks and desserts, handling daily tasks, and communicating with customers. Recorded, edited and uploaded videos and vlogs on official account.
+          </div>
+        </div>
       </li>
 
       <li>
-        <strong>Chef - Congzhi Cafe Space</strong>
-        <span style="font-weight: normal; color: #555;"> | May 2024-Jul 2024</span><br>
-         Customized seasonal menu and made seafood entrees. Coordinated orders in the kitchen.
+        <div class="experience-entry">
+          <img src="experience3.jpg" alt="Chef Role"> <!-- Replace this -->
+          <div class="experience-text">
+            <strong>Chef - Congzhi Cafe Space</strong>
+            <span>| May 2024-Jul 2024</span><br>
+            Customized seasonal menu and made seafood entrees. Coordinated orders in the kitchen.
+          </div>
+        </div>
       </li>
 
       <li>
-        <strong>Founder - Writers' Tavern</strong>
-        <span style="font-weight: normal; color: #555;"> | Jan 2025-Current</span><br>
-         Developed and customized the drink menu, contributed to interior design, and introduced a bistro concept to attract more customers.
+        <div class="experience-entry">
+          <img src="experience4.jpg" alt="Writers Tavern"> <!-- Replace this -->
+          <div class="experience-text">
+            <strong>Founder - Writers' Tavern</strong>
+            <span>| Jan 2025-Current</span><br>
+            Developed and customized the drink menu, contributed to interior design, and introduced a bistro concept to attract more customers.
+          </div>
+        </div>
       </li>
     </ul>
 
     <h2>Academic Experience</h2>
     <ul>
       <li>
-        <strong>Undergraduate Researcher - CATs Lab at UW-Madison</strong>
-        <span style="font-weight: normal; color: #555;"> | Feb-May 2024</span><br>
-        Implemented independent research of the ToF sensor. Recorded data and trained neural network. Designed classifiers to achieve accurate capture of human faces.
+        <div class="experience-entry">
+          <img src="experience5.jpg" alt="ToF Research"> <!-- Replace this -->
+          <div class="experience-text">
+            <strong>Undergraduate Researcher - CATs Lab at UW-Madison</strong>
+            <span>| Feb-May 2024</span><br>
+            Conducted independent research on Time-of-Flight (ToF) sensors, collected and analyzed data, trained neural networks, and developed classifiers for accurate facial feature detection.
+          </div>
+        </div>
       </li>
     </ul>
   </div>
