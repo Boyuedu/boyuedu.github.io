@@ -67,6 +67,14 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       flex-shrink: 0;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .zoomed {
+      transform: scale(2);
+      z-index: 100;
+      position: relative;
     }
 
     .experience-text strong {
@@ -102,7 +110,7 @@
     <ul>
       <li>
         <div class="experience-entry">
-          <img src="experience1.jpg" alt="CES Booth">
+          <img src="experience1.jpg" alt="CES Booth" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Business Developer - NaaS Technology</strong>
             <span>| Nov 2023-Jan 2024</span><br>
@@ -113,7 +121,7 @@
 
       <li>
         <div class="experience-entry">
-          <img src="experience2.jpg" alt="Congzhi Cafe"> <!-- Replace this -->
+          <img src="experience2.jpg" alt="Congzhi Cafe" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Founder - Congzhi Cafe Space</strong>
             <span>| Jun 2023-Current</span><br>
@@ -125,7 +133,7 @@
 
       <li>
         <div class="experience-entry">
-          <img src="experience3.jpg" alt="Chef Role"> <!-- Replace this -->
+          <img src="experience3.jpg" alt="Chef Role" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Chef - Congzhi Cafe Space</strong>
             <span>| May 2024-Jul 2024</span><br>
@@ -136,7 +144,7 @@
 
       <li>
         <div class="experience-entry">
-          <img src="experience4.jpg" alt="Writers Tavern"> <!-- Replace this -->
+          <img src="experience4.jpg" alt="Writers Tavern" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Founder - Writers' Tavern</strong>
             <span>| Jan 2025-Current</span><br>
@@ -150,7 +158,6 @@
     <ul>
       <li>
         <div class="experience-entry">
-          <img src="experience5.jpg" alt="ToF Research"> <!-- Replace this -->
           <div class="experience-text">
             <strong>Undergraduate Researcher - CATs Lab at UW-Madison</strong>
             <span>| Feb-May 2024</span><br>
@@ -160,5 +167,11 @@
       </li>
     </ul>
   </div>
+
+  <script>
+    function zoomImage(img) {
+      img.classList.toggle("zoomed");
+    }
+  </script>
 </body>
 </html>
