@@ -12,6 +12,7 @@
       padding: 2em;
       color: white;
     }
+
     img {
       width: 960px;
       height: 560px;
@@ -19,21 +20,30 @@
       border: 2px solid #ccc;
       border-radius: 10px;
     }
+
     h1 {
       font-weight: 700;
       letter-spacing: 1px;
       margin-bottom: 1em;
     }
+
     area {
-  cursor: pointer;
+      cursor: pointer;
     }
+
     .highlight {
-     position: absolute;
-     pointer-events: none;
-     border: 2px solid #00ffff;
-     border-radius: 8px;
-     box-shadow: 0 0 8px #00ffff;
-     display: none;
+      position: absolute;
+      pointer-events: none;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #00ffff;
+      display: none;
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: #94a3b8;
     }
   </style>
 </head>
@@ -42,7 +52,6 @@
   <p style="font-family: Arial, sans-serif; font-weight: 400; font-size: 1.1em; color: #e0e0e0;">
     This circuit board powers my story — tap a labeled component to discover more!
   </p>
-
 
   <img src="pcb_navigation.png" usemap="#pcblinks" alt="PCB Schematic Navigation" />
 
@@ -55,33 +64,38 @@
     <area shape="rect" coords="519,405,635,456" href="gallery.html" alt="Gallery" />
     <area shape="rect" coords="746,406,880,455" href="contact.html" alt="Contact" />
   </map>
+
   <div id="hoverHighlight" class="highlight"></div>
 
-<script>
-  const map = document.querySelector("map");
-  const highlight = document.getElementById("hoverHighlight");
-  const image = document.querySelector("img");
+  <footer>
+    © 2025 Boyue Du | Designed with HTML & CSS
+  </footer>
 
-  map.querySelectorAll("area").forEach(area => {
-    area.addEventListener("mouseenter", () => {
-      const coords = area.coords.split(',').map(Number);
-      const [x1, y1, x2, y2] = coords;
-      const imgRect = image.getBoundingClientRect();
+  <script>
+    const map = document.querySelector("map");
+    const highlight = document.getElementById("hoverHighlight");
+    const image = document.querySelector("img");
 
-      const width = x2 - x1;
-      const height = y2 - y1;
+    map.querySelectorAll("area").forEach(area => {
+      area.addEventListener("mouseenter", () => {
+        const coords = area.coords.split(',').map(Number);
+        const [x1, y1, x2, y2] = coords;
+        const imgRect = image.getBoundingClientRect();
 
-      highlight.style.left = `${imgRect.left + x1}px`;
-      highlight.style.top = `${imgRect.top + y1 + window.scrollY}px`;
-      highlight.style.width = `${width}px`;
-      highlight.style.height = `${height}px`;
-      highlight.style.display = "block";
+        const width = x2 - x1;
+        const height = y2 - y1;
+
+        highlight.style.left = `${imgRect.left + x1}px`;
+        highlight.style.top = `${imgRect.top + y1 + window.scrollY}px`;
+        highlight.style.width = `${width}px`;
+        highlight.style.height = `${height}px`;
+        highlight.style.display = "block";
+      });
+
+      area.addEventListener("mouseleave", () => {
+        highlight.style.display = "none";
+      });
     });
-
-    area.addEventListener("mouseleave", () => {
-      highlight.style.display = "none";
-    });
-  });
-</script>
+  </script>
 </body>
 </html>
