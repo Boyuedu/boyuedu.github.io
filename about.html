@@ -19,9 +19,9 @@
       background: url('landscape_photos/landscape23.jpg') no-repeat center center/cover;
       position: relative;
       color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); /* enhance text clarity */
     }
 
-    /* Overlay to darken background */
     .overlay {
       position: fixed;
       top: 0;
@@ -38,7 +38,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #007acc; /* solid blue */
+      background: #007acc;
       color: white;
       padding: 1em 2em;
     }
@@ -62,6 +62,13 @@
       padding: 3em 2em;
     }
 
+    .content-wrapper {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      padding: 2em;
+      border-radius: 15px;
+    }
+
     h2 {
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.2em;
@@ -72,6 +79,8 @@
     .intro {
       font-size: 1.1em;
       margin-bottom: 2em;
+      color: #fff;
+      line-height: 1.8;
     }
 
     .photo-grid {
@@ -79,7 +88,7 @@
       justify-content: center;
       align-items: center;
       gap: 1.5em;
-      flex-wrap: nowrap; /* force one row */
+      flex-wrap: nowrap;
       margin-top: 2em;
       margin-bottom: 2em;
     }
@@ -93,10 +102,11 @@
     }
 
     .paragraphs p {
+      color: #fff;
+      line-height: 1.8;
       margin-bottom: 1.5em;
     }
 
-    /* Optional: make images wrap on smaller screens */
     @media (max-width: 750px) {
       .photo-grid {
         flex-wrap: wrap;
@@ -105,10 +115,8 @@
   </style>
 </head>
 <body>
-  <!-- Dark overlay background -->
   <div class="overlay"></div>
 
-  <!-- Navigation Bar -->
   <nav>
     <div class="name">Boyue Du</div>
     <div class="links">
@@ -122,27 +130,27 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
   <div class="container">
-    <h2>About Me</h2>
+    <div class="content-wrapper">
+      <h2>About Me</h2>
 
-    <div class="intro">
-      <p>I’m Boyue Du, an electrical engineer passionate about intelligent electronics, power systems, and their applications in the automotive industry. I recently earned my B.S. in Electrical Engineering from the University of Wisconsin–Madison, where I developed advanced knowledge and hands-on experience in signal processing, machine learning, and applied physics. In Fall 2025, I will begin my M.S. in Electrical and Computer Engineering at UCLA, focusing on power system design and automotive innovation.</p>
-    </div>
+      <div class="intro">
+        <p>I’m Boyue Du, an electrical engineer passionate about intelligent electronics, power systems, and their applications in the automotive industry. I recently earned my B.S. in Electrical Engineering from the University of Wisconsin–Madison, where I developed advanced knowledge and hands-on experience in signal processing, machine learning, and applied physics. In Fall 2025, I will begin my M.S. in Electrical and Computer Engineering at UCLA, focusing on power system design and automotive innovation.</p>
+      </div>
 
-    <!-- Horizontally aligned photos -->
-    <div class="photo-grid">
-      <img src="about_photos/photo1.jpg" alt="Graduation stadium">
-      <img src="about_photos/photo2.jpg" alt="Holding diploma">
-      <img src="about_photos/photo3.jpg" alt="Make your mark bench">
-    </div>
+      <div class="photo-grid">
+        <img src="about_photos/photo1.jpg" alt="Graduation stadium">
+        <img src="about_photos/photo2.jpg" alt="Holding diploma">
+        <img src="about_photos/photo3.jpg" alt="Make your mark bench">
+      </div>
 
-    <div class="paragraphs">
-      <p>In my undergraduate life, curiosity led me to find my career path: engineering. Despite the challenging courses and heavy workload, I found joy in this process. Every night, when I walked tiredly to my dorm from Memorial Library, I felt enriched because I had learned something I didn't know before. Whenever I encountered elegant formulas derived by scientists like Fourier and Maxwell, whom I admired in childhood, I realized I was doing something meaningful. When I learned how engine and transmission operate in a car, I felt I moved closer to my goal. Curiosity and interest drove me to go forward.</p>
+      <div class="paragraphs">
+        <p>In my undergraduate life, curiosity led me to find my career path: engineering. Despite the challenging courses and heavy workload, I found joy in this process. Every night, when I walked tiredly to my dorm from Memorial Library, I felt enriched because I had learned something I didn't know before. Whenever I encountered elegant formulas derived by scientists like Fourier and Maxwell, whom I admired in childhood, I realized I was doing something meaningful. When I learned how engine and transmission operate in a car, I felt I moved closer to my goal. Curiosity and interest drove me to go forward.</p>
 
-      <p>In June 2023, during a break from school, I launched my own startup: 从知书院 (Congzhi), a Chinese-style multifunctional space that blends drinks, dining, music, literature, and bar culture together. Designed to attract young urban professionals, the space was more than a café—it was a hub for creativity and conversation. I managed everything from branding and interior design to kitchen operations. This entrepreneurial journey taught me how to transform ideas into real-world value and strengthened my belief in the power of interdisciplinary thinking.</p>
+        <p>In June 2023, during a break from school, I launched my own startup: 从知书院 (Congzhi), a Chinese-style multifunctional space that blends drinks, dining, music, literature, and bar culture together. Designed to attract young urban professionals, the space was more than a café—it was a hub for creativity and conversation. I managed everything from branding and interior design to kitchen operations. This entrepreneurial journey taught me how to transform ideas into real-world value and strengthened my belief in the power of interdisciplinary thinking.</p>
 
-      <p>On my first day as a freshman at UW–Madison, I saw the words engraved on a railing at Alumni Park: “Make your mark on the world.” Four years later, I haven’t changed my goal—only deepened my understanding of what it means. Now, with a foundation built on curiosity, perseverance, and purpose, I’m ready to leave that mark—through engineering, innovation, and impact.</p>
+        <p>On my first day as a freshman at UW–Madison, I saw the words engraved on a railing at Alumni Park: “Make your mark on the world.” Four years later, I haven’t changed my goal—only deepened my understanding of what it means. Now, with a foundation built on curiosity, perseverance, and purpose, I’m ready to leave that mark—through engineering, innovation, and impact.</p>
+      </div>
     </div>
   </div>
 </body>
