@@ -38,7 +38,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0, 122, 204, 0.8);
+      background: #007acc; /* solid blue */
       color: white;
       padding: 1em 2em;
     }
@@ -78,15 +78,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2em;
-      flex-wrap: wrap;
+      gap: 1.5em;
+      flex-wrap: nowrap; /* force one row */
       margin-top: 2em;
       margin-bottom: 2em;
     }
 
     .photo-grid img {
-      width: 300px;
-      height: 200px;
+      width: 220px;
+      height: 145px;
       object-fit: cover;
       border-radius: 10px;
       border: 2px solid #ccc;
@@ -94,6 +94,13 @@
 
     .paragraphs p {
       margin-bottom: 1.5em;
+    }
+
+    /* Optional: make images wrap on smaller screens */
+    @media (max-width: 750px) {
+      .photo-grid {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
@@ -123,7 +130,7 @@
       <p>I’m Boyue Du, an electrical engineer passionate about intelligent electronics, power systems, and their applications in the automotive industry. I recently earned my B.S. in Electrical Engineering from the University of Wisconsin–Madison, where I developed advanced knowledge and hands-on experience in signal processing, machine learning, and applied physics. In Fall 2025, I will begin my M.S. in Electrical and Computer Engineering at UCLA, focusing on power system design and automotive innovation.</p>
     </div>
 
-    <!-- Horizontal Photo Grid -->
+    <!-- Horizontally aligned photos -->
     <div class="photo-grid">
       <img src="about_photos/photo1.jpg" alt="Graduation stadium">
       <img src="about_photos/photo2.jpg" alt="Holding diploma">
