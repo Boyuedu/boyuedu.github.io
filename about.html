@@ -16,19 +16,19 @@
     }
 
     body {
-      background: url('landscape_photos/landscape23.jpg') no-repeat center center/cover;
+      background: url('about_background.jpg') no-repeat center center/cover;
       position: relative;
       color: #fff;
     }
 
-    /* Overlay for better readability */
+    /* Overlay to darken background */
     .overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
 
@@ -38,7 +38,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0, 122, 204, 0.8); /* semi-transparent blue */
+      background: rgba(0, 122, 204, 0.8);
       color: white;
       padding: 1em 2em;
     }
@@ -76,10 +76,12 @@
 
     .photo-grid {
       display: flex;
-      gap: 2em;
       justify-content: center;
-      margin-top: 2em;
+      align-items: center;
+      gap: 2em;
       flex-wrap: wrap;
+      margin-top: 2em;
+      margin-bottom: 2em;
     }
 
     .photo-grid img {
@@ -96,10 +98,10 @@
   </style>
 </head>
 <body>
-  <!-- Overlay background -->
+  <!-- Dark overlay background -->
   <div class="overlay"></div>
 
-  <!-- Nav -->
+  <!-- Navigation Bar -->
   <nav>
     <div class="name">Boyue Du</div>
     <div class="links">
@@ -121,10 +123,11 @@
       <p>I’m Boyue Du, an electrical engineer passionate about intelligent electronics, power systems, and their applications in the automotive industry. I recently earned my B.S. in Electrical Engineering from the University of Wisconsin–Madison, where I developed advanced knowledge and hands-on experience in signal processing, machine learning, and applied physics. In Fall 2025, I will begin my M.S. in Electrical and Computer Engineering at UCLA, focusing on power system design and automotive innovation.</p>
     </div>
 
+    <!-- Horizontal Photo Grid -->
     <div class="photo-grid">
-      <img src="about_photos/photo1.jpg">
-      <img src="about_photos/photo2.jpg">
-      <img src="about_photos/photo3.jpg">
+      <img src="about_photos/photo1.jpg" alt="Graduation stadium">
+      <img src="about_photos/photo2.jpg" alt="Holding diploma">
+      <img src="about_photos/photo3.jpg" alt="Make your mark bench">
     </div>
 
     <div class="paragraphs">
