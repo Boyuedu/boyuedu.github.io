@@ -4,19 +4,41 @@
   <meta charset="UTF-8">
   <title>About Me | Boyue Du</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      background: #f9f9f9;
-      line-height: 1.6;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url('landscape_photos/landscape23.jpg') no-repeat center center/cover;
+      position: relative;
+      color: #fff;
+    }
+
+    /* Overlay for better readability */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+      z-index: 0;
     }
 
     nav {
+      position: relative;
+      z-index: 1;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #007acc;
+      background: rgba(0, 122, 204, 0.8); /* semi-transparent blue */
       color: white;
       padding: 1em 2em;
     }
@@ -33,15 +55,18 @@
     }
 
     .container {
+      position: relative;
+      z-index: 1;
       max-width: 1000px;
       margin: auto;
-      padding: 2em;
+      padding: 3em 2em;
     }
 
     h2 {
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.2em;
       margin-bottom: 1em;
+      color: #fff;
     }
 
     .intro {
@@ -54,6 +79,7 @@
       gap: 2em;
       justify-content: center;
       margin-top: 2em;
+      flex-wrap: wrap;
     }
 
     .photo-grid img {
@@ -70,6 +96,10 @@
   </style>
 </head>
 <body>
+  <!-- Overlay background -->
+  <div class="overlay"></div>
+
+  <!-- Nav -->
   <nav>
     <div class="name">Boyue Du</div>
     <div class="links">
@@ -83,11 +113,12 @@
     </div>
   </nav>
 
+  <!-- Main Content -->
   <div class="container">
     <h2>About Me</h2>
 
     <div class="intro">
-      <p>I’m Boyue Du, an electrical engineer passionate about intelligent electronics, power systems, and their applications in the automotive industry. I recently earned my B.S. in Electrical Engineering from the University of Wisconsin–Madison, where I developed advanced knowledge and hands-on experience in signal processing, machine learning, and applied physics. In Fall 2025, I will begin my M.S. in Electrical and Computer Engineering at UCLA, focusing on power system design and automotive innovation. </p>
+      <p>I’m Boyue Du, an electrical engineer passionate about intelligent electronics, power systems, and their applications in the automotive industry. I recently earned my B.S. in Electrical Engineering from the University of Wisconsin–Madison, where I developed advanced knowledge and hands-on experience in signal processing, machine learning, and applied physics. In Fall 2025, I will begin my M.S. in Electrical and Computer Engineering at UCLA, focusing on power system design and automotive innovation.</p>
     </div>
 
     <div class="photo-grid">
@@ -97,9 +128,9 @@
     </div>
 
     <div class="paragraphs">
-      <p>In my undergraduate life, curiosity led me to find my career path: engineering. Despite the challenging courses and heavy workload, I found joy in this process. Every night, when I walked tiredly to my dorm from Memorial Library, I felt enriched because I had learned something I didn't know before. Whenever I encountered elegant formulas derived by scientists like Fourier and Maxwell, whom I admired in childhood, I realized I was doing something meaningful. When I learned how engine and transmission operate in a car, I felt I moved closer to my goal. Curiosity and interest drove me to go forward. </p>
+      <p>In my undergraduate life, curiosity led me to find my career path: engineering. Despite the challenging courses and heavy workload, I found joy in this process. Every night, when I walked tiredly to my dorm from Memorial Library, I felt enriched because I had learned something I didn't know before. Whenever I encountered elegant formulas derived by scientists like Fourier and Maxwell, whom I admired in childhood, I realized I was doing something meaningful. When I learned how engine and transmission operate in a car, I felt I moved closer to my goal. Curiosity and interest drove me to go forward.</p>
 
-      <p>In June 2023, during a break from school, I launched my own startup: 从知书院 (Congzhi), a Chinese-style multifunctional space that blends drinks, dining, music, literature, and bar culture together. Designed to attract young urban professionals, the space was more than a café—it was a hub for creativity and conversation. I managed everything from branding and interior design to kitchen operations. This entrepreneurial journey taught me how to transform ideas into real-world value and strengthened my belief in the power of interdisciplinary thinking. </p>
+      <p>In June 2023, during a break from school, I launched my own startup: 从知书院 (Congzhi), a Chinese-style multifunctional space that blends drinks, dining, music, literature, and bar culture together. Designed to attract young urban professionals, the space was more than a café—it was a hub for creativity and conversation. I managed everything from branding and interior design to kitchen operations. This entrepreneurial journey taught me how to transform ideas into real-world value and strengthened my belief in the power of interdisciplinary thinking.</p>
 
       <p>On my first day as a freshman at UW–Madison, I saw the words engraved on a railing at Alumni Park: “Make your mark on the world.” Four years later, I haven’t changed my goal—only deepened my understanding of what it means. Now, with a foundation built on curiosity, perseverance, and purpose, I’m ready to leave that mark—through engineering, innovation, and impact.</p>
     </div>
