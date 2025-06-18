@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Contact | Boyue Du</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xX2hFx92UvUfnJliAGkCSr5Bzmq+N3Ru+vOdcchNRiF3Mxz1YkUl9cUNilHd+VpQtiNDSy8+KSMR+Db1rnpO8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -99,17 +103,23 @@
     }
 
     .btn-link {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       margin: 10px;
       padding: 10px 20px;
       background-color: #60a5fa;
       color: white;
       text-decoration: none;
-      border-radius: 20px;
+      border-radius: 25px;
       font-weight: 600;
       font-size: 0.95em;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      text-align: center;
+    }
+
+    .btn-link i {
+      font-size: 1.1em;
     }
 
     .btn-link:hover {
@@ -162,8 +172,12 @@
 
       <!-- Social Links -->
       <div class="button-links">
-        <a class="btn-link" href="https://github.com/Boyuedu" target="_blank">GitHub</a>
-        <a class="btn-link" href="https://www.linkedin.com/in/david-du-9b80a4247/" target="_blank">LinkedIn</a>
+        <a class="btn-link" href="https://github.com/Boyuedu" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a class="btn-link" href="https://www.linkedin.com/in/david-du-9b80a4247/" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
       </div>
     </div>
 
@@ -172,7 +186,7 @@
   </div>
 
   <script>
-    // Show success message after submission
+    // Show success message after form submission
     const form = document.getElementById('contactForm');
     const successMsg = document.getElementById('successMessage');
 
