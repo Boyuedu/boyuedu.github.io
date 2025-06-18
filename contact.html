@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Contact | Boyue Du</title>
 
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome for LinkedIn -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xX2hFx92UvUfnJliAGkCSr5Bzmq+N3Ru+vOdcchNRiF3Mxz1YkUl9cUNilHd+VpQtiNDSy8+KSMR+Db1rnpO8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -118,13 +118,18 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
+    .btn-link:hover {
+      background-color: #3b82f6;
+      transform: scale(1.05);
+    }
+
     .btn-link i {
       font-size: 1.1em;
     }
 
-    .btn-link:hover {
-      background-color: #3b82f6;
-      transform: scale(1.05);
+    .btn-link img.icon {
+      height: 18px;
+      width: 18px;
     }
 
     .note {
@@ -173,7 +178,7 @@
       <!-- Social Links -->
       <div class="button-links">
         <a class="btn-link" href="https://github.com/Boyuedu" target="_blank">
-          <i class="fab fa-github"></i> GitHub
+          <img src="github_mark_white.png" alt="GitHub" class="icon" /> GitHub
         </a>
         <a class="btn-link" href="https://www.linkedin.com/in/david-du-9b80a4247/" target="_blank">
           <i class="fab fa-linkedin"></i> LinkedIn
