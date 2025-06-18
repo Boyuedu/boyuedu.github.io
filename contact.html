@@ -7,75 +7,66 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #2f3840;
-      color: #fff;
+      background: #f9f9f9;
       line-height: 1.6;
+      color: #000;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #347fda;
+      background: #347fda; /* Blue banner */
       padding: 1em 2em;
+      border-bottom: 1px solid #ccc;
     }
 
     .brand {
       font-weight: bold;
       font-size: 1.2em;
-      color: white;
+      color: white; /* White text for contrast */
     }
 
     .nav-links a {
       margin-left: 20px;
       text-decoration: none;
-      color: white;
+      color: white; /* White text for contrast */
       font-size: 1em;
     }
 
     .container {
-      max-width: 600px;
-      margin: 3em auto;
-      background: #2f3840;
+      max-width: 900px;
+      margin: auto;
       padding: 2em;
-      text-align: center;
+      text-align: center; /* Center content */
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: none;
-      font-size: 1em;
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.2em;
+      margin-top: 1em;
     }
 
-    input[type="submit"] {
-      background-color: transparent;
-      color: #fff;
-      border: 1px solid #fff;
-      cursor: pointer;
-      transition: 0.3s ease;
+    .button-links {
+      margin-top: 1em;
     }
 
-    input[type="submit"]:hover {
-      background-color: #fff;
-      color: #2f3840;
-    }
-
-    .captcha {
-      font-style: italic;
-      background-color: white;
-      color: black;
+    .btn-link {
       display: inline-block;
-      padding: 2px 10px;
-      margin-top: 10px;
+      margin: 5px 10px;
+      padding: 8px 18px;
+      background-color: #60a5fa;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.95em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .captcha-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .btn-link:hover {
+      background-color: #3b82f6;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -94,20 +85,16 @@
   </nav>
 
   <div class="container">
-    <h2>Send Me a Message</h2>
-    <!-- Use Formspree, Netlify, or backend handler -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" rows="6" placeholder="Message" required></textarea>
+    <h2>Contact</h2>
+    <p><strong>Preferred Email:</strong> <a href="mailto:bdu25@ucla.edu">bdu25@ucla.edu</a></p>
+    <p><strong>Tel:</strong> <a href="tel:+16086981543">+1 (608) 698-1543</a></p>
 
-      <div class="captcha-container">
-        <div class="captcha">D F 7 N</div>
-        <input type="text" name="captcha" placeholder="Enter the letters above" required />
-      </div>
+    <div class="button-links">
+      <a class="btn-link" href="https://github.com/Boyuedu" target="_blank">GitHub</a>
+      <a class="btn-link" href="https://www.linkedin.com/in/david-du-9b80a4247/" target="_blank">LinkedIn</a>
+    </div>
 
-      <input type="submit" value="Send" />
-    </form>
+    <p style="font-size: 1.3em; font-weight: 500; color: #333;"><em>Feel free to contact me any time!</em></p>
   </div>
 </body>
 </html>
