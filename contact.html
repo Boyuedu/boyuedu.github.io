@@ -16,7 +16,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #347fda; /* Blue banner */
+      background: #347fda;
       padding: 1em 2em;
       border-bottom: 1px solid #ccc;
     }
@@ -24,13 +24,13 @@
     .brand {
       font-weight: bold;
       font-size: 1.2em;
-      color: white; /* White text for contrast */
+      color: white;
     }
 
     .nav-links a {
       margin-left: 20px;
       text-decoration: none;
-      color: white; /* White text for contrast */
+      color: white;
       font-size: 1em;
     }
 
@@ -38,7 +38,7 @@
       max-width: 900px;
       margin: auto;
       padding: 2em;
-      text-align: center; /* Center content */
+      text-align: center;
     }
 
     h2 {
@@ -68,7 +68,33 @@
       background-color: #3b82f6;
       transform: scale(1.05);
     }
+
+    .email-reveal {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-top: 0.5em;
+      background-color: #e0e0e0;
+      border: 1px solid #999;
+      color: #000;
+      font-family: Consolas, monospace;
+      font-size: 0.95em;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .email-text {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
   </style>
+  <script>
+    function revealEmail() {
+      document.getElementById('reveal-button').style.display = 'none';
+      document.getElementById('email-display').style.display = 'block';
+    }
+  </script>
 </head>
 <body>
   <nav>
@@ -86,7 +112,10 @@
 
   <div class="container">
     <h2>Contact</h2>
-    <p><strong>Preferred Email:</strong> <a href="mailto:bdu25@ucla.edu">bdu25@ucla.edu</a></p>
+    <p><strong>Preferred Email:</strong></p>
+    <div id="reveal-button" class="email-reveal" onclick="revealEmail()">Show Email</div>
+    <div id="email-display" class="email-text"><a href="mailto:bdu25@ucla.edu">bdu25@ucla.edu</a></div>
+
     <p><strong>Tel:</strong> <a href="tel:+16086981543">+1 (608) 698-1543</a></p>
 
     <div class="button-links">
