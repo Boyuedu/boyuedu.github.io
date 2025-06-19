@@ -37,19 +37,24 @@
       justify-content: center;
     }
 
+    .grid a {
+      display: inline-block;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #334155;
+      transition: transform 0.3s ease;
+    }
+
+    .grid a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #38bdf8;
+    }
+
     .grid img {
       width: 300px;
       height: 200px;
       object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid #334155;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px #38bdf8;
+      display: block;
     }
 
     .back-link {
@@ -70,18 +75,26 @@
 
   <h1>Nevada</h1>
 
+  <div class="description">
+    This collection captures moments and landscapes across Nevada during my road trip. Double-click any photo to open it in a new window.
+  </div>
+
   <div class="grid">
-    <img src="landscape_photos/landscape17.jpg" alt="Nevada Photo 1">
-    <!-- Add more Nevada-specific photos -->
+    <a href="landscape_photos/landscape17.jpg" target="_blank">
+      <img src="landscape_photos/landscape17.jpg" alt="Nevada Photo 1">
+    </a>
+    <!-- Repeat for more images -->
   </div>
 
   <a class="back-link" href="landscape.html">← Back to Landscape Gallery</a>
 
   <script>
-    document.querySelectorAll('.grid img').forEach(img => {
-      img.ondblclick = () => {
-        window.open(img.src, '_blank');
-      };
+    // Optional: Prevent single click from triggering default action
+    document.querySelectorAll('.grid a').forEach(anchor => {
+      anchor.addEventListener('click', (e) => e.preventDefault());
+      anchor.addEventListener('dblclick', () => {
+        window.open(anchor.href, '_blank');
+      });
     });
   </script>
 </body>
