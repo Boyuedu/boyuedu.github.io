@@ -39,14 +39,19 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
+  // Initialize map
   const map = L.map('us-map').setView([39.5, -98.35], 4);
 
+  // ✅ Remove Leaflet logo and Ukraine flag from attribution
+  map.attributionControl.setPrefix(false);
+
+  // Add OpenStreetMap tile layer with required attribution
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
   }).addTo(map);
 
+  // Load and render U.S. state borders
   fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
     .then(res => res.json())
     .then(data => {
@@ -61,7 +66,7 @@
           const stateName = feature.properties.name;
           const link = stateName.toLowerCase().replace(/ /g, '-') + '.html';
 
-          layer.bindTooltip(stateName);
+          layer.bindTooltip(stateName); // Show full name on hover
           layer.on('click', () => {
             window.open(link, '_blank');
           });
@@ -75,6 +80,7 @@
       }).addTo(map);
     });
 
+  // Marker data
   const stateMarkers = [
     { name: "Wisconsin", abbr: "WI", lat: 44.5, lng: -89.5 },
     { name: "Illinois", abbr: "IL", lat: 40.0, lng: -89.0 },
@@ -90,14 +96,14 @@
     { name: "Indiana", abbr: "IN", lat: 39.9, lng: -86.3 }
   ];
 
+  // Add hover-only tooltips and clickable markers
   stateMarkers.forEach(state => {
     const marker = L.marker([state.lat, state.lng]).addTo(map);
 
     marker.bindTooltip(`<div class="custom-label">${state.abbr}</div>`, {
-      permanent: false,  // ✅ Only show on hover
+      permanent: false, // show only on hover
       direction: 'top',
-      offset: [0, -10],
-      className: 'leaflet-tooltip-own'
+      offset: [0, -10]
     });
 
     marker.on('click', () => {
