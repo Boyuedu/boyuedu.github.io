@@ -20,6 +20,15 @@
     .leaflet-container {
       font-family: 'Inter', sans-serif;
     }
+
+    .custom-label {
+      font-weight: bold;
+      font-size: 0.85rem;
+      background: white;
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: black;
+    }
   </style>
 </head>
 <body>
@@ -30,14 +39,13 @@
 <script>
   const map = L.map('us-map').setView([39.5, -98.35], 4);
 
-  // Add OpenStreetMap tiles with required attribution
+  // Add OpenStreetMap tiles with attribution
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
   }).addTo(map);
 
-  // Load GeoJSON data for US states
+  // State GeoJSON outlines
   fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
     .then(res => res.json())
     .then(data => {
@@ -49,10 +57,12 @@
           fillOpacity: 0.5
         },
         onEachFeature: (feature, layer) => {
-          layer.bindTooltip(feature.properties.name);
-          layer.on('click', function () {
-            const state = feature.properties.name.toLowerCase().replace(/ /g, '-');
-            window.location.href = `${state}.html`;  // e.g., california.html
+          const stateName = feature.properties.name;
+          const link = stateName.toLowerCase().replace(/ /g, '-');
+
+          layer.bindTooltip(stateName);
+          layer.on('click', () => {
+            window.location.href = `${link}.html`;  // e.g., california.html
           });
           layer.on('mouseover', function () {
             this.setStyle({ fillOpacity: 0.7 });
@@ -63,6 +73,39 @@
         }
       }).addTo(map);
     });
+
+  // Circle markers and labels for specific states
+  const stateMarkers = [
+    { name: "Wisconsin", abbr: "WI", lat: 44.5, lng: -89.5 },
+    { name: "Illinois", abbr: "IL", lat: 40.0, lng: -89.0 },
+    { name: "Iowa", abbr: "IA", lat: 42.0, lng: -93.0 },
+    { name: "Colorado", abbr: "CO", lat: 39.0, lng: -105.5 },
+    { name: "Nebraska", abbr: "NE", lat: 41.5, lng: -99.5 },
+    { name: "Utah", abbr: "UT", lat: 39.3, lng: -111.5 },
+    { name: "California", abbr: "CA", lat: 37.2, lng: -119.0 }
+  ];
+
+  stateMarkers.forEach(state => {
+    const circle = L.circleMarker([state.lat, state.lng], {
+      radius: 6,
+      fillColor: '#facc15',
+      color: '#facc15',
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.9
+    }).addTo(map);
+
+    circle.bindTooltip(`<div class="custom-label">${state.abbr}</div>`, {
+      permanent: true,
+      direction: 'top',
+      offset: [0, -10]
+    });
+
+    circle.on('click', () => {
+      const link = state.name.toLowerCase().replace(/ /g, '-') + '.html';
+      window.location.href = link;
+    });
+  });
 </script>
 </body>
 </html>
