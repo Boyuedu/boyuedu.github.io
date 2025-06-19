@@ -35,17 +35,21 @@
 
 <div id="us-map"></div>
 
+<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <script>
+  // Initialize map
   const map = L.map('us-map').setView([39.5, -98.35], 4);
 
-  // Add OpenStreetMap tiles with attribution
+  // Add OpenStreetMap base layer with attribution
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
   }).addTo(map);
 
-  // State GeoJSON outlines
+  // Add U.S. states geoJSON
   fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
     .then(res => res.json())
     .then(data => {
@@ -58,11 +62,11 @@
         },
         onEachFeature: (feature, layer) => {
           const stateName = feature.properties.name;
-          const link = stateName.toLowerCase().replace(/ /g, '-');
+          const link = stateName.toLowerCase().replace(/ /g, '-') + '.html';
 
           layer.bindTooltip(stateName);
           layer.on('click', () => {
-            window.location.href = `${link}.html`;  // e.g., california.html
+            window.location.href = link;
           });
           layer.on('mouseover', function () {
             this.setStyle({ fillOpacity: 0.7 });
@@ -74,7 +78,7 @@
       }).addTo(map);
     });
 
-  // Circle markers and labels for specific states
+  // Custom labeled circle markers for 7 states
   const stateMarkers = [
     { name: "Wisconsin", abbr: "WI", lat: 44.5, lng: -89.5 },
     { name: "Illinois", abbr: "IL", lat: 40.0, lng: -89.0 },
