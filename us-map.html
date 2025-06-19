@@ -80,19 +80,19 @@
 
   // Custom labeled circle markers for 7 states
   const stateMarkers = [
-  { name: "Wisconsin", abbr: "WI", lat: 44.5, lng: -89.5 },
-  { name: "Illinois", abbr: "IL", lat: 40.0, lng: -89.0 },
-  { name: "Iowa", abbr: "IA", lat: 42.0, lng: -93.0 },
-  { name: "Colorado", abbr: "CO", lat: 39.0, lng: -105.5 },
-  { name: "Nebraska", abbr: "NE", lat: 41.5, lng: -99.5 },
-  { name: "Utah", abbr: "UT", lat: 39.3, lng: -111.5 },
-  { name: "California", abbr: "CA", lat: 37.2, lng: -119.0 },
-  { name: "Nevada", abbr: "NV", lat: 39.5, lng: -116.8 },
-  { name: "New York", abbr: "NY", lat: 43.0, lng: -75.0 },
-  { name: "Florida", abbr: "FL", lat: 27.7, lng: -81.5 },
-  { name: "Michigan", abbr: "MI", lat: 44.0, lng: -85.5 },
-  { name: "Indiana", abbr: "IN", lat: 39.9, lng: -86.3 }
-];
+    { name: "Wisconsin", abbr: "WI", lat: 44.5, lng: -89.5 },
+    { name: "Illinois", abbr: "IL", lat: 40.0, lng: -89.0 },
+    { name: "Iowa", abbr: "IA", lat: 42.0, lng: -93.0 },
+    { name: "Colorado", abbr: "CO", lat: 39.0, lng: -105.5 },
+    { name: "Nebraska", abbr: "NE", lat: 41.5, lng: -99.5 },
+    { name: "Utah", abbr: "UT", lat: 39.3, lng: -111.5 },
+    { name: "California", abbr: "CA", lat: 37.2, lng: -119.0 },
+    { name: "Nevada", abbr: "NV", lat: 39.5, lng: -116.8 },
+    { name: "New York", abbr: "NY", lat: 43.0, lng: -75.0 },
+    { name: "Florida", abbr: "FL", lat: 27.7, lng: -81.5 },
+    { name: "Michigan", abbr: "MI", lat: 44.0, lng: -85.5 },
+    { name: "Indiana", abbr: "IN", lat: 39.9, lng: -86.3 }
+  ];
 
   stateMarkers.forEach(state => {
     const circle = L.circleMarker([state.lat, state.lng], {
