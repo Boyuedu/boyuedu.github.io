@@ -63,7 +63,7 @@
 
           layer.bindTooltip(stateName);
           layer.on('click', () => {
-            window.location.href = link;
+            window.open(link, '_blank');
           });
           layer.on('mouseover', function () {
             this.setStyle({ fillOpacity: 0.7 });
@@ -94,7 +94,7 @@
     const marker = L.marker([state.lat, state.lng]).addTo(map);
 
     marker.bindTooltip(`<div class="custom-label">${state.abbr}</div>`, {
-      permanent: true,
+      permanent: false,  // ✅ Only show on hover
       direction: 'top',
       offset: [0, -10],
       className: 'leaflet-tooltip-own'
@@ -102,7 +102,7 @@
 
     marker.on('click', () => {
       const link = state.name.toLowerCase().replace(/ /g, '-') + '.html';
-      window.location.href = link;
+      window.open(link, '_blank');
     });
   });
 </script>
