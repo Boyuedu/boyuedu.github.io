@@ -52,29 +52,6 @@
       box-shadow: 0 0 12px #38bdf8;
     }
 
-    /* Modal for zoom */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 5%;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 85vh;
-      border-radius: 10px;
-      box-shadow: 0 0 30px #38bdf8;
-      cursor: zoom-out;
-    }
-
     .back-link {
       margin-top: 2em;
       font-family: 'Inter', sans-serif;
@@ -93,36 +70,19 @@
 
   <h1>Nevada</h1>
 
-  <div class="description">
-    This collection captures moments and landscapes across Nevada during my road trip. Double-click any photo to see it enlarged.
-  </div>
-
   <div class="grid">
     <img src="landscape_photos/landscape17.jpg" alt="Nevada Photo 1">
     <!-- Add more Nevada-specific photos -->
   </div>
 
-  <!-- Modal Zoom Viewer -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <img id="modal-img" class="modal-content" alt="Zoomed Photo">
-  </div>
-
   <a class="back-link" href="landscape.html">← Back to Landscape Gallery</a>
 
   <script>
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-
     document.querySelectorAll('.grid img').forEach(img => {
       img.ondblclick = () => {
-        modal.style.display = "block";
-        modalImg.src = img.src;
+        window.open(img.src, '_blank');
       };
     });
-
-    function closeModal() {
-      modal.style.display = "none";
-    }
   </script>
 </body>
 </html>
