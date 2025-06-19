@@ -2,49 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Interactive U.S. Map | Boyue Du</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha512-sA+z0pLV2w3PIYv28NdFiO/oM9f1ldQRnSY9p1z1A8+GxI0EeOTFQjUePf0RiN2Fc9PM1xIuZbiO9Uzkf+QAeQ==" crossorigin="" />
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       background: #0f172a;
     }
 
-    svg {
-      width: 100%;
+    #us-map {
       height: 100%;
-      cursor: pointer;
+      width: 100%;
     }
 
-    .region:hover {
-      fill: #38bdf8 !important;
-      transition: 0.3s;
+    .leaflet-container {
+      font-family: 'Arial', sans-serif;
     }
   </style>
 </head>
 <body>
-  <svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
-    <!-- WEST -->
-    <a href="west.html">
-      <rect x="50" y="150" width="180" height="250" fill="#1e293b" class="region"/>
-      <text x="90" y="280" font-size="24" fill="#fff">WEST</text>
-    </a>
 
-    <!-- MIDWEST -->
-    <a href="midwest.html">
-      <rect x="260" y="130" width="180" height="250" fill="#1e293b" class="region"/>
-      <text x="290" y="260" font-size="24" fill="#fff">MIDWEST</text>
-    </a>
+<div id="us-map"></div>
 
-    <!-- SOUTH -->
-    <a href="south.html">
-      <rect x="470" y="270" width="180" height="180" fill="#1e293b" class="region"/>
-      <text x="510" y="360" font-size="24" fill="#fff">SOUTH</text>
-    </a>
+<!-- Leaflet.js -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha512-Gf94YMaTH6UXT6HK0+/BpiAoLgC4KkN3f3R0I6+iB4Wa/EO5t+yw4jPf07GjpiqY6w+Aoer97T0qzjViU7F9NA==" crossorigin=""></script>
 
-    <!-- EAST -->
-    <a href="east.html">
-      <rect x="660" y="140" width="180" height="240" fill="#1e293b" class="region"/>
-      <text x="700" y="270" font-size="24" fill="#fff">EAST</text>
-    </a>
-  </svg>
+<script>
+  const map = L.map('us-map').setView([39.5, -98.35], 4); // Center of the US
+
+  // Add OpenStreetMap tile layer (with attribution)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>'
+  }).addTo(map);
+
+  // Load public GeoJSON for US states
+  fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
+    .then(res => res.json())
+    .then(data => {
+      L.geoJSON(data, {
+        style: {
+          color: '#1e3a8a',
+          weight: 1,
+          fillColor: '#38bdf8',
+          fillOpacity: 0.4
+        },
+        onEachFeature: (feature, layer) => {
+          layer.on('mouseover', function () {
+            this.setStyle({ fillOpacity: 0.7 });
+          });
+          layer.on('mouseout', function () {
+            this.setStyle({ fillOpacity: 0.4 });
+          });
+          layer.on('click', function () {
+            const state = feature.properties.name.toLowerCase().replace(/ /g, '-');
+            window.location.href = `${state}.html`; // e.g., california.html
+          });
+          layer.bindTooltip(feature.properties.name);
+        }
+      }).addTo(map);
+    });
+</script>
+
 </body>
 </html>
