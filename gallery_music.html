@@ -46,7 +46,6 @@
       justify-content: center;
     }
 
-    .grid img,
     .grid video {
       width: 300px;
       height: 200px;
@@ -55,9 +54,9 @@
       border: 2px solid #334155;
       transition: transform 0.3s ease;
       cursor: pointer;
+      background: #0b1220;
     }
 
-    .grid img:hover,
     .grid video:hover {
       transform: scale(1.05);
       box-shadow: 0 0 12px #38bdf8;
@@ -75,51 +74,79 @@
       background-color: rgba(0, 0, 0, 0.9);
     }
 
-    .modal-content {
+    .modal-video {
       margin: auto;
       display: block;
-      max-width: 90%;
+      width: min(1000px, 92%);
       max-height: 85vh;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 30px #38bdf8;
-      transition: 0.3s;
-      cursor: zoom-out;
+      cursor: default;
+    }
+
+    .close-hint {
+      font-family: 'Inter', sans-serif;
+      color: #94a3b8;
+      margin-top: 14px;
+      font-size: 0.95em;
     }
   </style>
 </head>
+
 <body>
   <h1>Music Cover</h1>
 
   <div class="description">
-    Classics Jazz Pop Rock
+    Classics · Jazz · Pop · Rock<br>
     Enjoy Music
   </div>
 
-  <div class="instruction">Double click each cover to zoom in</div>
+  <div class="instruction">Double click a video to play in full screen modal</div>
 
   <div class="grid">
-    <img src="music_videos/农夫渔夫.MOV">
+    <!-- ✅ Put your videos here -->
+    <video class="thumb" muted playsinline preload="metadata" data-src="music_videos/农夫渔夫.MOV">
+      <source src="music_videos/农夫渔夫.MOV" type="video/MOV">
+      Your browser does not support the video tag.
+    </video>
 
+    <!-- Example for adding another -->
+    <!--
+    <video class="thumb" muted playsinline preload="metadata" data-src="music_videos/example.mp4">
+      <source src="music_videos/example.mp4" type="video/mp4">
+    </video>
+    -->
   </div>
 
   <!-- Modal -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <img id="modal-img" class="modal-content" alt="Zoomed Art">
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <video id="modal-video" class="modal-video" controls autoplay playsinline></video>
+    <div class="close-hint">Click outside the video to close</div>
   </div>
 
   <script>
     const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
+    const modalVideo = document.getElementById("modal-video");
 
-    document.querySelectorAll('.grid img').forEach(img => {
-      img.ondblclick = () => {
+    // Double click a thumbnail video to open modal
+    document.querySelectorAll('.grid video.thumb').forEach(v => {
+      v.ondblclick = () => {
+        const src = v.getAttribute('data-src');
         modal.style.display = "block";
-        modalImg.src = img.src;
+        modalVideo.src = src;
+        modalVideo.load();
+        modalVideo.play().catch(() => {});
       };
     });
 
-    function closeModal() {
-      modal.style.display = "none";
+    // Close only when clicking the dark background (not the video)
+    function closeModal(e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        modalVideo.pause();
+        modalVideo.removeAttribute("src");
+        modalVideo.load();
+      }
     }
   </script>
 </body>
