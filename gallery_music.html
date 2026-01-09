@@ -46,7 +46,8 @@
       justify-content: center;
     }
 
-    .grid video {
+    /* Thumbnails */
+    .grid img.thumb {
       width: 300px;
       height: 200px;
       object-fit: cover;
@@ -57,11 +58,12 @@
       background: #0b1220;
     }
 
-    .grid video:hover {
+    .grid img.thumb:hover {
       transform: scale(1.05);
       box-shadow: 0 0 12px #38bdf8;
     }
 
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -74,14 +76,15 @@
       background-color: rgba(0, 0, 0, 0.9);
     }
 
-    .modal-video {
+    .modal-frame {
       margin: auto;
       display: block;
       width: min(1000px, 92%);
-      max-height: 85vh;
+      height: min(600px, 80vh);
+      border: none;
       border-radius: 12px;
       box-shadow: 0 0 30px #38bdf8;
-      cursor: default;
+      background: #000;
     }
 
     .close-hint {
@@ -101,51 +104,53 @@
     Enjoy Music
   </div>
 
-  <div class="instruction">Double click a video to play in full screen modal</div>
+  <div class="instruction">Double click a cover to play in full screen modal</div>
 
+  <!-- ✅ GRID (add your videos here) -->
   <div class="grid">
-    <!-- ✅ Put your videos here -->
-    <video class="thumb" muted playsinline preload="metadata" data-src="music_videos/农夫渔夫.MOV">
-      <source src="music_videos/农夫渔夫.MOV" type="video/MOV">
-      Your browser does not support the video tag.
-    </video>
+    <!-- Video 1 -->
+    <img
+      class="thumb"
+      src="music_videos/BlowingInTheWind封面.jpg"
+      alt="Music Video"
+      data-preview="https://drive.google.com/file/d/1TyMt7hfbfseCwDuDA8rGHV0XKDnT6YzX/preview"
+    />
 
-    <!-- Example for adding another -->
+    <!-- Copy/paste blocks like this for more videos -->
     <!--
-    <video class="thumb" muted playsinline preload="metadata" data-src="music_videos/example.mp4">
-      <source src="music_videos/example.mp4" type="video/mp4">
-    </video>
+    <img
+      class="thumb"
+      src="thumbnails/video2.jpg"
+      alt="Music Video 2"
+      data-preview="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+    />
     -->
   </div>
 
-  <!-- Modal -->
+  <!-- ✅ MODAL -->
   <div id="modal" class="modal" onclick="closeModal(event)">
-    <video id="modal-video" class="modal-video" controls autoplay playsinline></video>
+    <iframe id="modal-frame" class="modal-frame" allow="autoplay"></iframe>
     <div class="close-hint">Click outside the video to close</div>
   </div>
 
   <script>
     const modal = document.getElementById("modal");
-    const modalVideo = document.getElementById("modal-video");
+    const modalFrame = document.getElementById("modal-frame");
 
-    // Double click a thumbnail video to open modal
-    document.querySelectorAll('.grid video.thumb').forEach(v => {
-      v.ondblclick = () => {
-        const src = v.getAttribute('data-src');
+    // Double click a thumbnail image to open modal
+    document.querySelectorAll('.grid img.thumb').forEach(img => {
+      img.ondblclick = () => {
+        const preview = img.getAttribute('data-preview');
         modal.style.display = "block";
-        modalVideo.src = src;
-        modalVideo.load();
-        modalVideo.play().catch(() => {});
+        modalFrame.src = preview;
       };
     });
 
-    // Close only when clicking the dark background (not the video)
+    // Close only when clicking the dark background (not the iframe)
     function closeModal(e) {
       if (e.target === modal) {
         modal.style.display = "none";
-        modalVideo.pause();
-        modalVideo.removeAttribute("src");
-        modalVideo.load();
+        modalFrame.src = "";
       }
     }
   </script>
