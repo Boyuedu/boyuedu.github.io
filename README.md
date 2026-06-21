@@ -44,7 +44,6 @@ This site showcases my education, research interests, professional experience, a
 │   ├── css/main.css           # Shared styles
 │   ├── js/main.js             # Shared scripts
 │   ├── img/                   # Images (icons, gallery, projects, …)
-│   └── docs/                  # Resume PDF
 ├── _pending_review/           # Non-site source files awaiting manual decision
 ├── CNAME                      # Custom domain (myboyue.com)
 ├── README.md
@@ -69,7 +68,6 @@ GitHub Pages serves this site from the **root** of the default branch. No build 
 
 - **Images:** Large JPG files live under `assets/img/`. Consider compressing photos before committing new ones (target ~200–500 KB for web).
 - **Contact form:** Submissions go to Formspree (`contact.html`). Enable spam filtering in the Formspree dashboard if needed.
-- **Resume:** `assets/docs/resume_boyue.pdf` — update when your CV changes; linked from Education.
 - **Pending files:** Check `_pending_review/` before deleting `.docx` source files.
 
 ## Privacy & Security
