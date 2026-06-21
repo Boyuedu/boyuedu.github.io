@@ -1,103 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="page-gallery-dark">
 <head>
   <meta charset="UTF-8">
-  <title>Music Album | Boyue Du</title>
-
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Music cover performances — classics, jazz, pop, and rock." />
+  <title>Music Cover | Boyue Du</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
 
-  <style>
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(180deg, #0f172a, #1e293b);
-      color: white;
-      margin: 0;
-      padding: 2em;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-    }
-
-    .description {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1em;
-      max-width: 800px;
-      margin: 0 auto 1em auto;
-      color: #cbd5e1;
-      line-height: 1.8;
-    }
-
-    .instruction {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95em;
-      color: #94a3b8;
-      margin-bottom: 2.5em;
-    }
-
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      justify-content: center;
-    }
-
-    /* Thumbnails */
-    .grid img.thumb {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid #334155;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      background: #0b1220;
-    }
-
-    .grid img.thumb:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px #38bdf8;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 5%;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    .modal-frame {
-      margin: auto;
-      display: block;
-      width: min(1000px, 92%);
-      height: min(600px, 80vh);
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #38bdf8;
-      background: #000;
-    }
-
-    .close-hint {
-      font-family: 'Inter', sans-serif;
-      color: #94a3b8;
-      margin-top: 14px;
-      font-size: 0.95em;
-    }
-  </style>
 </head>
-
 <body>
-  <h1>Music Cover</h1>
+<h1>Music Cover</h1>
 
   <div class="description">
     Classics · Jazz · Pop · Rock<br>
@@ -112,7 +26,7 @@
   <!-- Video 1 -->
     <img
       class="thumb"
-      src="thumbnails/CityOfStarsCover.JPG"
+      src="../../assets/img/thumbnails/CityOfStarsCover.JPG"
       alt=" City Of Stars – Music Cover"
       data-preview="https://drive.google.com/file/d/1FplMwIQeug0hMgBxqvB1clx_6doiqukf/preview"
     />
@@ -120,7 +34,7 @@
   <!-- Video 2  -->
     <img
       class="thumb"
-      src="thumbnails/Traumerei.JPG"
+      src="../../assets/img/thumbnails/Traumerei.JPG"
       alt=" 童年情景（梦幻曲） – Music Cover"
       data-preview="https://drive.google.com/file/d/1nki5unZXKTz8Rt7ko-GSAVOjE7PAr6q2/preview"
     />
@@ -128,7 +42,7 @@
   <!-- Video 3 -->
     <img
       class="thumb"
-      src="thumbnails/WonderfulTonight_eguitarCover.JPG"
+      src="../../assets/img/thumbnails/WonderfulTonight_eguitarCover.JPG"
       alt=" Wonderful Tonight – Music Cover"
       data-preview="https://drive.google.com/file/d/11N9A6S0tzighjKa0GQgdu9ShEiOzYM3x/preview"
     />
@@ -136,7 +50,7 @@
   <!-- Video 4 -->
     <img
       class="thumb"
-      src="thumbnails/LiLiAnCover.JPG"
+      src="../../assets/img/thumbnails/LiLiAnCover.JPG"
       alt=" 莉莉安 – Music Cover"
       data-preview="https://drive.google.com/file/d/1gsyiSo8q-Mnc3gv_LVTlk2o60wSU5I_p/preview"
     />
@@ -144,7 +58,7 @@
   <!-- Video 5 -->
     <img
       class="thumb"
-      src="thumbnails/MiDian.JPG"
+      src="../../assets/img/thumbnails/MiDian.JPG"
       alt=" 米店 – Music Cover"
       data-preview="https://drive.google.com/file/d/1vhMtdZGRkjeJ4Igoy5IVZuyo3Im6wGR2/preview"
     />
@@ -152,7 +66,7 @@
   <!-- Video 6 -->
     <img
       class="thumb"
-      src="thumbnails/FlyMeToTheMoonCover.JPG"
+      src="../../assets/img/thumbnails/FlyMeToTheMoonCover.JPG"
       alt=" Fly Me to the Moon – Music Cover"
       data-preview="https://drive.google.com/file/d/10z0n-vCPX0dSIpm9Yes00Tc-Xr_dQL-T/preview"
     />
@@ -160,7 +74,7 @@
   <!-- Video 7 --> 
     <img
       class="thumb"
-      src="thumbnails/BlowingInTheWindCover.JPG"
+      src="../../assets/img/thumbnails/BlowingInTheWindCover.JPG"
       alt="Blowin' in the Wind – Music Cover"
       data-preview="https://drive.google.com/file/d/1mTauDLKSXB7QWs1zD0QaSYPqzt9BXfee/preview"
     />
@@ -168,7 +82,7 @@
   <!-- Video 8 -->
     <img
       class="thumb"
-      src="thumbnails/XiaoHongHuaCover.JPG"
+      src="../../assets/img/thumbnails/XiaoHongHuaCover.JPG"
       alt=" 送你一朵小红花 – Music Cover"
       data-preview="https://drive.google.com/file/d/10HAgdP5ZyFA8Ixv4OTqvX31aD7c-EdCZ/preview"
     />
@@ -176,7 +90,7 @@
   <!-- Video 9 -->
     <img
       class="thumb"
-      src="thumbnails/XiangJiangZhongLuCover.JPG"
+      src="../../assets/img/thumbnails/XiangJiangZhongLuCover.JPG"
       alt=" 湘江中路 – Music Cover"
       data-preview="https://drive.google.com/file/d/1eSmQGuKOOVVUbWmqN1wYoHeY7xALwFje/preview"
     />
@@ -184,7 +98,7 @@
   <!-- Video 10 -->
     <img
       class="thumb"
-      src="thumbnails/LvRen.JPG"
+      src="../../assets/img/thumbnails/LvRen.JPG"
       alt=" 亲爱的旅人啊 – Music Cover"
       data-preview="https://drive.google.com/file/d/1lWiOYxCG4elqpzh9i_D9ESgyPMYsmYE9/preview"
     />
@@ -192,7 +106,7 @@
   <!-- Video 11 -->
     <img
       class="thumb"
-      src="thumbnails/WonderfulTonight_aguitarCover.JPG"
+      src="../../assets/img/thumbnails/WonderfulTonight_aguitarCover.JPG"
       alt=" Wonderful Tonight – Music Cover"
       data-preview="https://drive.google.com/file/d/1lvGME028s0-vueMeKdKyOU1rIXR6TJlW/preview"
     />
@@ -200,7 +114,7 @@
   <!-- Video 12 -->
     <img
       class="thumb"
-      src="thumbnails/HeyJudeCover.JPG"
+      src="../../assets/img/thumbnails/HeyJudeCover.JPG"
       alt=" Hey Jude – Music Cover"
       data-preview="https://drive.google.com/file/d/1VUdqOjwT35RIFNQVjHbw8kBw-QDvTpP3/preview"
     />
@@ -208,7 +122,7 @@
   <!-- Video 13 -->
     <img
       class="thumb"
-      src="thumbnails/ErGeCover.JPG"
+      src="../../assets/img/thumbnails/ErGeCover.JPG"
       alt=" 儿歌 – Music Cover"
       data-preview="https://drive.google.com/file/d/1s7EOMhYPpJsrDWYUIdHfwzinzGe9TLrA/preview"
     />
@@ -216,7 +130,7 @@
   <!-- Video 14 -->
     <img
       class="thumb"
-      src="thumbnails/NongFuYuFuCover.JPG"
+      src="../../assets/img/thumbnails/NongFuYuFuCover.JPG"
       alt=" 农夫渔夫 – Music Cover"
       data-preview="https://drive.google.com/file/d/1qhwlasAvfl2kMfXh8vChsOrYqkIZHrnV/preview"
     />
@@ -230,26 +144,7 @@
     <div class="close-hint">Click outside the video to close</div>
   </div>
 
-  <script>
-    const modal = document.getElementById("modal");
-    const modalFrame = document.getElementById("modal-frame");
-
-    // Double click a thumbnail image to open modal
-    document.querySelectorAll('.grid img.thumb').forEach(img => {
-      img.ondblclick = () => {
-        const preview = img.getAttribute('data-preview');
-        modal.style.display = "block";
-        modalFrame.src = preview;
-      };
-    });
-
-    // Close only when clicking the dark background (not the iframe)
-    function closeModal(e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        modalFrame.src = "";
-      }
-    }
-  </script>
+  
+  <script src="../../assets/js/main.js"></script>
 </body>
 </html>

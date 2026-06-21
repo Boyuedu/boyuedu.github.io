@@ -1,36 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="page-us-map">
 <head>
   <meta charset="UTF-8" />
-  <title>Interactive U.S. Map</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive U.S. map — explore landscape photos by state." />
+  <title>Interactive U.S. Map | Boyue Du</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      background-color: #0f172a;
-    }
-
-    #us-map {
-      height: 100%;
-      width: 100%;
-    }
-
-    .leaflet-container {
-      font-family: 'Inter', sans-serif;
-    }
-
-    .custom-label {
-      font-weight: bold;
-      font-size: 0.85rem;
-      background: white;
-      padding: 2px 6px;
-      border-radius: 6px;
-      color: black;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-  </style>
+  <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body>
 
@@ -39,19 +15,22 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
-  // Initialize map
   const map = L.map('us-map').setView([39.5, -98.35], 4);
-
-  // ✅ Remove Leaflet logo and Ukraine flag from attribution
   map.attributionControl.setPrefix(false);
 
-  // Add OpenStreetMap tile layer with required attribution
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>'
   }).addTo(map);
 
-  // Load and render U.S. state borders
+  function statePage(name) {
+    return '../travel/' + name.toLowerCase().replace(/ /g, '-') + '.html';
+  }
+
+  function openState(name) {
+    window.open(statePage(name), '_blank', 'noopener,noreferrer');
+  }
+
   fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json')
     .then(res => res.json())
     .then(data => {
@@ -64,12 +43,8 @@
         },
         onEachFeature: (feature, layer) => {
           const stateName = feature.properties.name;
-          const link = stateName.toLowerCase().replace(/ /g, '-') + '.html';
-
-          layer.bindTooltip(stateName); // Show full name on hover
-          layer.on('click', () => {
-            window.open(link, '_blank');
-          });
+          layer.bindTooltip(stateName);
+          layer.on('click', () => openState(stateName));
           layer.on('mouseover', function () {
             this.setStyle({ fillOpacity: 0.7 });
           });
@@ -80,7 +55,6 @@
       }).addTo(map);
     });
 
-  // Marker data
   const stateMarkers = [
     { name: "Wisconsin", abbr: "WI", lat: 44.5, lng: -89.5 },
     { name: "Illinois", abbr: "IL", lat: 40.0, lng: -89.0 },
@@ -96,20 +70,14 @@
     { name: "Indiana", abbr: "IN", lat: 39.9, lng: -86.3 }
   ];
 
-  // Add hover-only tooltips and clickable markers
   stateMarkers.forEach(state => {
     const marker = L.marker([state.lat, state.lng]).addTo(map);
-
     marker.bindTooltip(`<div class="custom-label">${state.abbr}</div>`, {
-      permanent: false, // show only on hover
+      permanent: false,
       direction: 'top',
       offset: [0, -10]
     });
-
-    marker.on('click', () => {
-      const link = state.name.toLowerCase().replace(/ /g, '-') + '.html';
-      window.open(link, '_blank');
-    });
+    marker.on('click', () => openState(state.name));
   });
 </script>
 </body>

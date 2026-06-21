@@ -1,80 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="page-light page-education">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Education and awards of Boyue Du — UCLA M.S. and UW–Madison B.S. in Electrical Engineering." />
   <title>Education | Boyue Du</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      line-height: 1.6;
-      color: #000;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #347fda; /* Blue banner */
-      padding: 1em 2em;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .brand {
-      font-weight: bold;
-      font-size: 1.2em;
-      color: white;
-    }
-
-    .nav-links a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: white;
-      font-size: 1em;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2em;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.2em;
-      margin-top: 2em;
-    }
-
-    .course-link {
-      display: inline-block;
-      margin-top: 0.5em;
-      padding: 6px 12px;
-      background-color: #007acc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .course-link:hover {
-      background-color: #005c99;
-    }
-
-    .research-section {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .research-section ul {
-      margin-top: 0;
-    }
-
-    .research-img {
-      max-width: 270px;
-      height: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <nav>
@@ -104,7 +35,7 @@
         <li>AI4health, AI4culture</li>
         <li>Embodied Intelligence</li>
       </ul>
-      <img class="research-img" src="Research_Venn_Diagram.png" alt="Research Venn Diagram" />
+      <img class="research-img" src="assets/img/backgrounds/Research_Venn_Diagram.png" alt="Research interests Venn diagram" />
     </div>
 
     <h2>Awards</h2>
@@ -112,9 +43,8 @@
       <li>
         <strong>NVIDIA GTC Hack for Impact — Culture Impact Track Winner (2026)</strong>
 
-        <div style="margin-top:10px;">
-          <img src="gtc-award.jpg" alt="NVIDIA GTC Hackathon Award"
-               style="width:50%; max-width:500px; border-radius:10px;">
+        <div>
+          <img class="award-img" src="assets/img/backgrounds/gtc-award.jpg" alt="NVIDIA GTC Hackathon award certificate">
         </div>
 
         <p style="margin-top:8px;">
@@ -129,15 +59,17 @@
       </li>
     </ul>
 
-   
-
     <h2>Coursework</h2>
     <p>Click below to view a full list of courses I've completed:</p>
 
-    <a class="course-link" href="coursework.html" target="_blank">View Undergraduate Courses</a>
-    <a class="course-link" href="graduate_courses.html" target="_blank" style="margin-left: 10px;">
+    <a class="course-link" href="pages/education/coursework.html" target="_blank" rel="noopener noreferrer">View Undergraduate Courses</a>
+    <a class="course-link" href="pages/education/graduate_courses.html" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
       View Graduate Courses
     </a>
+
+    <p style="margin-top: 1.5em;">
+      <a class="course-link" href="assets/docs/resume_boyue.pdf" target="_blank" rel="noopener noreferrer">Download Resume (PDF)</a>
+    </p>
   </div>
 </body>
 </html>

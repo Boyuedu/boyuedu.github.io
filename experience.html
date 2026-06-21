@@ -1,95 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="page-light page-experience">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional and academic experience of Boyue Du — business development, entrepreneurship, and research." />
   <title>Experience | Boyue Du</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 2em;
-      border-bottom: 1px solid #ccc;
-      background: #347fda; /* Blue banner */
-    }
-
-    nav .brand {
-      font-weight: bold;
-      font-size: 1.2em;
-      color: white; /* White text */
-    }
-
-    nav .links a {
-      margin-left: 20px;
-      color: white; /* White text */
-      text-decoration: none;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2em;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.2em;
-      margin-bottom: 1em;
-    }
-
-    ul {
-      padding-left: 0;
-      list-style: none;
-    }
-
-    li {
-      margin-bottom: 2em;
-    }
-
-    .experience-entry {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .experience-entry img {
-      width: 250px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      flex-shrink: 0;
-      cursor: zoom-in;
-      transition: transform 0.3s ease;
-    }
-
-    .zoomed {
-      transform: scale(2);
-      z-index: 100;
-      position: relative;
-    }
-
-    .experience-text strong {
-      display: block;
-      font-weight: bold;
-      font-size: 1em;
-      margin-bottom: 0.3em;
-      color: #000;
-    }
-
-    .experience-text span {
-      font-weight: normal;
-      color: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <nav>
@@ -110,7 +26,7 @@
     <ul>
       <li>
         <div class="experience-entry">
-          <img src="experience1.jpg" alt="CES Booth" ondblclick="zoomImage(this)">
+          <img src="assets/img/experience/experience1.jpg" alt="CES Booth" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Business Developer - NaaS Technology</strong>
             <span>| Nov 2023-Jan 2024</span><br>
@@ -125,7 +41,7 @@
 
       <li>
         <div class="experience-entry">
-          <img src="experience2.jpg" alt="Congzhi Cafe" ondblclick="zoomImage(this)">
+          <img src="assets/img/experience/experience2.jpg" alt="Congzhi Cafe" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Founder - Congzhi Cafe Space</strong>
             <span>| Jun 2023-Current</span><br>
@@ -141,7 +57,7 @@
 
       <li>
         <div class="experience-entry">
-          <img src="experience3.jpg" alt="Chef Role" ondblclick="zoomImage(this)">
+          <img src="assets/img/experience/experience3.jpg" alt="Chef Role" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Chef - Congzhi Cafe Space</strong>
             <span>| May-Jul 2024</span><br>
@@ -154,7 +70,7 @@
 
       <li>
         <div class="experience-entry">
-          <img src="experience4.jpg" alt="Writers Tavern" ondblclick="zoomImage(this)">
+          <img src="assets/img/experience/experience4.jpg" alt="Writers Tavern" ondblclick="zoomImage(this)">
           <div class="experience-text">
             <strong>Founder - Writers' Tavern</strong>
             <span>| Jan 2025-Current</span><br>
@@ -228,10 +144,6 @@
 
       
       
-  <script>
-    function zoomImage(img) {
-      img.classList.toggle("zoomed");
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
