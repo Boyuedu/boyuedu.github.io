@@ -50,32 +50,6 @@ This site showcases my education, research interests, professional experience, a
 └── .gitignore
 ```
 
-## Local Preview
-
-From the repository root:
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in your browser.
-
-## Deployment
-
-GitHub Pages serves this site from the **root** of the default branch. No build step is required. Push to `main` (or your configured Pages branch) to publish.
-
-## Maintenance Notes
-
-- **Images:** Large JPG files live under `assets/img/`. Consider compressing photos before committing new ones (target ~200–500 KB for web).
-- **Contact form:** Submissions go to Formspree (`contact.html`). Enable spam filtering in the Formspree dashboard if needed.
-- **Pending files:** Check `_pending_review/` before deleting `.docx` source files.
-
-## Privacy & Security
-
-- **Do not commit secrets** — no API keys, tokens, `.env` files, or private keys belong in this repository.
-- The contact form uses a public Formspree endpoint; protect against spam via Formspree settings and the built-in honeypot field.
-- Review Google Drive sharing permissions for embedded gallery videos.
-
 ## License
 
 Personal portfolio content © Boyue Du. All rights reserved unless otherwise noted.
