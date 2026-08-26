@@ -770,3 +770,50 @@ html.page-us-map body {
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.resume-section {
+  margin-top: 28px;
+  margin-bottom: 55px;
+  margin-left: 38px;
+}
+
+.resume-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.resume-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resume-item {
+  font-size: 1rem;
+}
+
+.resume-item strong {
+  display: inline-block;
+  min-width: 150px;
+}
+
+.resume-item a {
+  color: #1f5f8b;
+  text-decoration: none;
+}
+
+.resume-item a:hover {
+  text-decoration: underline;
+}
+
+.link-separator {
+  margin: 0 8px;
+  color: #888;
+}
+
+.resume-update {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: #777;
+  font-style: italic;
+}
