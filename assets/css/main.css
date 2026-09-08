@@ -917,7 +917,7 @@ html.page-us-map body {
 
 .project-architecture img {
   display: block;
-  width: 80%;
+  width: 82%;
   max-width: 850px;
   height: auto;
   margin: 0 auto;
@@ -930,17 +930,15 @@ html.page-us-map body {
 
 .project-architecture figcaption {
   margin-top: 10px;
-
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-
   color: #888;
   text-align: center;
 }
 
-
-/* Space between projects */
-.project-item {
-  margin-bottom: 80px;
+@media (max-width: 768px) {
+  .project-architecture img {
+    width: 100%;
+  }
 }
