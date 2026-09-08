@@ -906,3 +906,42 @@ html.page-us-map body {
 .project-links a:hover {
   text-decoration: underline;
 }
+
+/* =========================
+   Project Architecture
+========================= */
+
+.project-architecture {
+  margin: 28px 0 24px;
+}
+
+.project-architecture img {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+
+  margin: 0 auto;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+.project-architecture figcaption {
+  margin-top: 10px;
+
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #888;
+  text-align: center;
+}
+
+
+/* Space between projects */
+.project-item {
+  margin-bottom: 80px;
+}
