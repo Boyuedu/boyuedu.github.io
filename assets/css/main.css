@@ -917,10 +917,9 @@ html.page-us-map body {
 
 .project-architecture img {
   display: block;
-  width: 100%;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 850px;
   height: auto;
-
   margin: 0 auto;
 
   border: 1px solid rgba(0, 0, 0, 0.08);
