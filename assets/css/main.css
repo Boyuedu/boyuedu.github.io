@@ -912,7 +912,7 @@ html.page-us-map body {
 ========================= */
 
 .project-architecture {
-  width: 520px;
+  width: 560px;
   max-width: 100%;
   margin: 24px 0;
 }
@@ -921,7 +921,7 @@ html.page-us-map body {
   display: block;
 
   width: 100%;
-  height: 300px;
+  aspect-ratio: 16 / 9;
 
   object-fit: contain;
   object-position: left center;
