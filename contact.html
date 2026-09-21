@@ -1,14 +1,9 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="page-contact">
 
 <head>
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta
     name="description"
@@ -19,10 +14,10 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
 
-  <!-- WeChat popup styles -->
   <style>
-
-    /* WeChat icon */
+    /* =========================
+       WeChat Button
+    ========================== */
 
     .wechat-trigger {
       display: flex;
@@ -38,16 +33,20 @@
       cursor: pointer;
     }
 
-    .wechat-trigger svg {
+    .wechat-trigger img {
       display: block;
+
       width: 54px;
       height: 54px;
 
-      transition: transform 0.2s ease,
-                  opacity 0.2s ease;
+      object-fit: contain;
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
     }
 
-    .wechat-trigger:hover svg {
+    .wechat-trigger:hover img {
       transform: scale(1.08);
       opacity: 0.85;
     }
@@ -59,25 +58,23 @@
     }
 
 
-    /* WeChat popup */
+    /* =========================
+       WeChat Modal
+    ========================== */
 
     .wechat-modal {
-      position: fixed;
-
       width: min(360px, calc(100% - 40px));
       max-width: 360px;
-      max-height: calc(100% - 40px);
 
       padding: 32px 24px 28px;
-
-      margin: auto;
-
-      background: #ffffff;
 
       border: none;
       border-radius: 14px;
 
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      background: #ffffff;
+
+      box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.18);
 
       text-align: center;
 
@@ -89,20 +86,23 @@
     }
 
 
-    /* Close button */
+    /* =========================
+       Close Button
+    ========================== */
 
     .wechat-close {
       position: absolute;
 
       top: 12px;
-      right: 16px;
+      right: 15px;
 
       padding: 4px 8px;
 
       border: none;
       background: transparent;
 
-      color: #777777;
+      color: #777;
+
       font-size: 28px;
       font-weight: 300;
       line-height: 1;
@@ -113,16 +113,19 @@
     }
 
     .wechat-close:hover {
-      color: #222222;
+      color: #222;
     }
 
 
-    /* Popup content */
+    /* =========================
+       Modal Text
+    ========================== */
 
     .wechat-modal h3 {
       margin: 0 0 8px;
 
-      color: #222222;
+      color: #222;
+
       font-size: 23px;
       font-weight: 600;
     }
@@ -130,13 +133,16 @@
     .wechat-description {
       margin: 0 0 22px;
 
-      color: #777777;
+      color: #777;
+
       font-size: 14px;
       line-height: 1.5;
     }
 
 
-    /* QR code */
+    /* =========================
+       QR Code
+    ========================== */
 
     .wechat-qr {
       display: block;
@@ -147,27 +153,27 @@
 
       margin: 0 auto;
 
-      border-radius: 5px;
+      border-radius: 6px;
     }
 
 
-    /* Footer */
+    /* =========================
+       Modal Footer
+    ========================== */
 
     .wechat-footer {
       margin: 18px 0 0;
 
-      color: #555555;
+      color: #555;
+
       font-size: 14px;
       line-height: 1.5;
     }
 
-    .wechat-footer span {
-      color: #07c160;
-      font-weight: 500;
-    }
 
-
-    /* Mobile */
+    /* =========================
+       Mobile
+    ========================== */
 
     @media (max-width: 480px) {
 
@@ -179,8 +185,11 @@
         max-width: 230px;
       }
 
+      .wechat-trigger img {
+        width: 50px;
+        height: 50px;
+      }
     }
-
   </style>
 
 </head>
@@ -188,7 +197,9 @@
 
 <body>
 
-  <!-- Navigation -->
+  <!-- =========================
+       Navigation
+  ========================== -->
 
   <nav>
 
@@ -198,39 +209,56 @@
 
     <div class="nav-links">
 
-      <a href="index.html">Home</a>
+      <a href="index.html">
+        Home
+      </a>
 
-      <a href="about.html">About</a>
+      <a href="about.html">
+        About
+      </a>
 
-      <a href="education.html">Education</a>
+      <a href="education.html">
+        Education
+      </a>
 
-      <a href="experience.html">Experience</a>
+      <a href="experience.html">
+        Experience
+      </a>
 
       <a href="projects.html">
         Research & Projects
       </a>
 
-      <a href="gallery.html">Gallery</a>
+      <a href="gallery.html">
+        Gallery
+      </a>
 
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">
+        Contact
+      </a>
 
     </div>
 
   </nav>
 
 
-
-  <!-- Contact -->
+  <!-- =========================
+       Contact Section
+  ========================== -->
 
   <div class="container">
 
-    <h2>Contact</h2>
+    <h2>
+      Contact
+    </h2>
 
 
     <div class="contact-wrapper">
 
 
-      <!-- Contact form -->
+      <!-- =========================
+           Contact Form
+      ========================== -->
 
       <form
         class="contact-form"
@@ -266,7 +294,8 @@
           required
         ></textarea>
 
-        <!-- Spam protection -->
+
+        <!-- Spam Protection -->
 
         <input
           type="text"
@@ -277,6 +306,7 @@
           aria-hidden="true"
         />
 
+
         <button type="submit">
           Send
         </button>
@@ -284,8 +314,9 @@
       </form>
 
 
-
-      <!-- Social links -->
+      <!-- =========================
+           Social Links
+      ========================== -->
 
       <div class="button-links">
 
@@ -308,7 +339,6 @@
         </a>
 
 
-
         <!-- LinkedIn -->
 
         <a
@@ -325,7 +355,6 @@
           />
 
         </a>
-
 
 
         <!-- Google Scholar -->
@@ -346,86 +375,24 @@
         </a>
 
 
-
         <!-- WeChat -->
 
         <button
           type="button"
           class="icon-link wechat-trigger"
           id="wechatButton"
+
           aria-label="Show my WeChat QR code"
           aria-haspopup="dialog"
           aria-controls="wechatModal"
+
           title="Connect on WeChat"
         >
 
-          <!-- WeChat icon -->
-
-          <svg
-            viewBox="0 0 64 64"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-
-            <circle
-              cx="32"
-              cy="32"
-              r="30"
-              fill="#07C160"
-            />
-
-            <!-- Left chat bubble -->
-
-            <path
-              d="M37.5 35.5
-                 C29.7 35.5 23.4 29.9 23.4 23
-                 C23.4 21.2 23.8 19.5 24.6 18
-                 C15.8 18.3 9 24.1 9 31.2
-                 C9 35.6 11.5 39.4 15.4 41.9
-                 L14.5 47
-                 L20.3 44.3
-                 C22.7 45.1 25.3 45.5 28 45.5
-                 C31.1 45.5 34 44.8 36.4 43.6
-                 C35.4 41.9 34.9 40 34.9 38
-                 C34.9 37.1 35 36.3 35.2 35.5
-                 Z"
-              fill="white"
-            />
-
-            <!-- Right chat bubble -->
-
-            <path
-              d="M55 29
-                 C55 21 47.4 14.5 38 14.5
-                 C28.6 14.5 21 21 21 29
-                 C21 37 28.6 43.5 38 43.5
-                 C40.5 43.5 42.9 43 45 42.2
-                 L50.8 45
-                 L49.9 39.9
-                 C53.1 37.2 55 33.3 55 29
-                 Z"
-              fill="white"
-              stroke="#07C160"
-              stroke-width="1.5"
-            />
-
-            <!-- Eyes -->
-
-            <circle
-              cx="31.5"
-              cy="27.5"
-              r="1.8"
-              fill="#07C160"
-            />
-
-            <circle
-              cx="43.5"
-              cy="27.5"
-              r="1.8"
-              fill="#07C160"
-            />
-
-          </svg>
+          <img
+            src="assets/img/icons/wechat.png"
+            alt="WeChat"
+          />
 
         </button>
 
@@ -435,8 +402,9 @@
     </div>
 
 
-
-    <!-- Form success message -->
+    <!-- =========================
+         Success Message
+    ========================== -->
 
     <p
       class="success-message"
@@ -446,47 +414,57 @@
     </p>
 
 
-
-    <!-- Contact note -->
+    <!-- =========================
+         Bottom Note
+    ========================== -->
 
     <p class="note">
-      <em>Feel free to contact me any time!</em>
-    </p>
 
+      <em>
+        Feel free to contact me any time!
+      </em>
+
+    </p>
 
   </div>
 
 
 
-  <!-- WeChat QR code popup -->
+  <!-- =========================
+       WeChat QR Code Modal
+  ========================== -->
 
   <dialog
     class="wechat-modal"
     id="wechatModal"
+
     aria-labelledby="wechatTitle"
     aria-describedby="wechatDescription"
   >
 
 
-    <!-- Close button -->
+    <!-- Close Button -->
 
     <button
       type="button"
       class="wechat-close"
       id="wechatClose"
+
       aria-label="Close WeChat QR code"
     >
+
       &times;
+
     </button>
 
 
-
-    <!-- Popup title -->
+    <!-- Title -->
 
     <h3 id="wechatTitle">
-      Connect on WeChat
-    </h3>
 
+      Connect on WeChat
+
+    </h3>
 
 
     <!-- Description -->
@@ -495,25 +473,29 @@
       class="wechat-description"
       id="wechatDescription"
     >
+
       Scan the QR code to connect with me.
+
     </p>
 
 
-
-    <!-- WeChat QR code image -->
+    <!-- QR Code -->
 
     <img
       class="wechat-qr"
+
       src="assets/img/icons/wechat_qr.png"
+
       alt="Boyue Du's WeChat QR code"
     />
-
 
 
     <!-- Footer -->
 
     <p class="wechat-footer">
+
       Looking forward to connecting with you!
+
     </p>
 
 
@@ -521,13 +503,17 @@
 
 
 
-  <!-- Existing JavaScript -->
+  <!-- =========================
+       Existing JavaScript
+  ========================== -->
 
   <script src="assets/js/main.js"></script>
 
 
 
-  <!-- WeChat popup JavaScript -->
+  <!-- =========================
+       WeChat Modal JavaScript
+  ========================== -->
 
   <script>
 
@@ -541,40 +527,53 @@
       document.getElementById("wechatClose");
 
 
-    // Open QR code popup
+    /*
+     * Open modal
+     */
 
-    wechatButton.addEventListener("click", function () {
+    wechatButton.addEventListener(
+      "click",
+      function () {
 
-      wechatModal.showModal();
+        wechatModal.showModal();
 
-    });
-
-
-    // Close popup
-
-    wechatClose.addEventListener("click", function () {
-
-      wechatModal.close();
-
-      wechatButton.focus();
-
-    });
+      }
+    );
 
 
-    // Close when clicking outside the popup
+    /*
+     * Close modal using X
+     */
 
-    wechatModal.addEventListener("click", function (event) {
+    wechatClose.addEventListener(
+      "click",
+      function () {
 
-      if (event.target === wechatModal) {
+        wechatModal.close();
 
-        const rect = wechatModal.getBoundingClientRect();
+      }
+    );
 
-        const clickedInside = (
+
+    /*
+     * Close modal when clicking
+     * outside the popup
+     */
+
+    wechatModal.addEventListener(
+      "click",
+      function (event) {
+
+        const rect =
+          wechatModal.getBoundingClientRect();
+
+
+        const clickedInside =
           event.clientX >= rect.left &&
           event.clientX <= rect.right &&
           event.clientY >= rect.top &&
-          event.clientY <= rect.bottom
-        );
+          event.clientY <= rect.bottom;
+
 
         if (!clickedInside) {
 
@@ -583,17 +582,22 @@
         }
 
       }
+    );
 
-    });
 
+    /*
+     * Return keyboard focus
+     * to WeChat button
+     */
 
-    // Restore keyboard focus after closing
+    wechatModal.addEventListener(
+      "close",
+      function () {
 
-    wechatModal.addEventListener("close", function () {
+        wechatButton.focus();
 
-      wechatButton.focus();
-
-    });
+      }
+    );
 
   </script>
 
