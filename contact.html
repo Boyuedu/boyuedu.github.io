@@ -1,57 +1,603 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en" class="page-contact">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Boyue Du — send a message or connect on GitHub, LinkedIn, and Google Scholar." />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Contact Boyue Du — send a message or connect on GitHub, LinkedIn, Google Scholar, and WeChat."
+  />
+
   <title>Contact | Boyue Du</title>
+
   <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- WeChat popup styles -->
+  <style>
+
+    /* WeChat icon */
+
+    .wechat-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+      margin: 0;
+
+      border: none;
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .wechat-trigger svg {
+      display: block;
+      width: 54px;
+      height: 54px;
+
+      transition: transform 0.2s ease,
+                  opacity 0.2s ease;
+    }
+
+    .wechat-trigger:hover svg {
+      transform: scale(1.08);
+      opacity: 0.85;
+    }
+
+    .wechat-trigger:focus-visible {
+      outline: 2px solid #07c160;
+      outline-offset: 5px;
+      border-radius: 6px;
+    }
+
+
+    /* WeChat popup */
+
+    .wechat-modal {
+      position: fixed;
+
+      width: min(360px, calc(100% - 40px));
+      max-width: 360px;
+      max-height: calc(100% - 40px);
+
+      padding: 32px 24px 28px;
+
+      margin: auto;
+
+      background: #ffffff;
+
+      border: none;
+      border-radius: 14px;
+
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+
+      text-align: center;
+
+      box-sizing: border-box;
+    }
+
+    .wechat-modal::backdrop {
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+
+    /* Close button */
+
+    .wechat-close {
+      position: absolute;
+
+      top: 12px;
+      right: 16px;
+
+      padding: 4px 8px;
+
+      border: none;
+      background: transparent;
+
+      color: #777777;
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 1;
+
+      cursor: pointer;
+
+      transition: color 0.2s ease;
+    }
+
+    .wechat-close:hover {
+      color: #222222;
+    }
+
+
+    /* Popup content */
+
+    .wechat-modal h3 {
+      margin: 0 0 8px;
+
+      color: #222222;
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    .wechat-description {
+      margin: 0 0 22px;
+
+      color: #777777;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+
+    /* QR code */
+
+    .wechat-qr {
+      display: block;
+
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+
+      margin: 0 auto;
+
+      border-radius: 5px;
+    }
+
+
+    /* Footer */
+
+    .wechat-footer {
+      margin: 18px 0 0;
+
+      color: #555555;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .wechat-footer span {
+      color: #07c160;
+      font-weight: 500;
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 480px) {
+
+      .wechat-modal {
+        padding: 30px 20px 24px;
+      }
+
+      .wechat-qr {
+        max-width: 230px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 <body>
+
+  <!-- Navigation -->
+
   <nav>
-    <div class="brand">Boyue Du</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="education.html">Education</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html">Research & Projects</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
+
+    <div class="brand">
+      Boyue Du
     </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">Home</a>
+
+      <a href="about.html">About</a>
+
+      <a href="education.html">Education</a>
+
+      <a href="experience.html">Experience</a>
+
+      <a href="projects.html">
+        Research & Projects
+      </a>
+
+      <a href="gallery.html">Gallery</a>
+
+      <a href="contact.html">Contact</a>
+
+    </div>
+
   </nav>
 
+
+
+  <!-- Contact -->
+
   <div class="container">
+
     <h2>Contact</h2>
+
+
     <div class="contact-wrapper">
-      <form class="contact-form" action="https://formspree.io/f/xanjbldy" method="POST" id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <input type="text" name="subject" placeholder="Subject" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <button type="submit">Send</button>
+
+
+      <!-- Contact form -->
+
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/xanjbldy"
+        method="POST"
+        id="contactForm"
+      >
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+
+        <input
+          type="email"
+          name="_replyto"
+          placeholder="Your Email"
+          required
+        />
+
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          required
+        />
+
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
+
+        <!-- Spam protection -->
+
+        <input
+          type="text"
+          name="_gotcha"
+          class="hp-field"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
+        <button type="submit">
+          Send
+        </button>
+
       </form>
 
+
+
+      <!-- Social links -->
+
       <div class="button-links">
-        <a class="icon-link" href="https://github.com/Boyuedu" target="_blank" rel="noopener noreferrer">
-          <img src="assets/img/icons/github_mark.png" alt="GitHub profile" title="Visit my GitHub" />
+
+
+        <!-- GitHub -->
+
+        <a
+          class="icon-link"
+          href="https://github.com/Boyuedu"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <img
+            src="assets/img/icons/github_mark.png"
+            alt="GitHub profile"
+            title="Visit my GitHub"
+          />
+
         </a>
 
-        <a class="icon-link" href="https://www.linkedin.com/in/boyue-du-9b80a4247" target="_blank" rel="noopener noreferrer">
-          <img src="assets/img/icons/LI-In-Bug.png" alt="LinkedIn profile" title="Connect on LinkedIn" />
+
+
+        <!-- LinkedIn -->
+
+        <a
+          class="icon-link"
+          href="https://www.linkedin.com/in/boyue-du-9b80a4247"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <img
+            src="assets/img/icons/LI-In-Bug.png"
+            alt="LinkedIn profile"
+            title="Connect on LinkedIn"
+          />
+
         </a>
 
-        <a class="icon-link" href="https://scholar.google.com/citations?user=BjeS0oYAAAAJ" target="_blank" rel="noopener noreferrer">
-          <img src="assets/img/icons/google_scholar.png" alt="Google Scholar profile" title="View my Google Scholar" />
+
+
+        <!-- Google Scholar -->
+
+        <a
+          class="icon-link"
+          href="https://scholar.google.com/citations?user=BjeS0oYAAAAJ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <img
+            src="assets/img/icons/google_scholar.png"
+            alt="Google Scholar profile"
+            title="View my Google Scholar"
+          />
+
         </a>
+
+
+
+        <!-- WeChat -->
+
+        <button
+          type="button"
+          class="icon-link wechat-trigger"
+          id="wechatButton"
+          aria-label="Show my WeChat QR code"
+          aria-haspopup="dialog"
+          aria-controls="wechatModal"
+          title="Connect on WeChat"
+        >
+
+          <!-- WeChat icon -->
+
+          <svg
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+
+            <circle
+              cx="32"
+              cy="32"
+              r="30"
+              fill="#07C160"
+            />
+
+            <!-- Left chat bubble -->
+
+            <path
+              d="M37.5 35.5
+                 C29.7 35.5 23.4 29.9 23.4 23
+                 C23.4 21.2 23.8 19.5 24.6 18
+                 C15.8 18.3 9 24.1 9 31.2
+                 C9 35.6 11.5 39.4 15.4 41.9
+                 L14.5 47
+                 L20.3 44.3
+                 C22.7 45.1 25.3 45.5 28 45.5
+                 C31.1 45.5 34 44.8 36.4 43.6
+                 C35.4 41.9 34.9 40 34.9 38
+                 C34.9 37.1 35 36.3 35.2 35.5
+                 Z"
+              fill="white"
+            />
+
+            <!-- Right chat bubble -->
+
+            <path
+              d="M55 29
+                 C55 21 47.4 14.5 38 14.5
+                 C28.6 14.5 21 21 21 29
+                 C21 37 28.6 43.5 38 43.5
+                 C40.5 43.5 42.9 43 45 42.2
+                 L50.8 45
+                 L49.9 39.9
+                 C53.1 37.2 55 33.3 55 29
+                 Z"
+              fill="white"
+              stroke="#07C160"
+              stroke-width="1.5"
+            />
+
+            <!-- Eyes -->
+
+            <circle
+              cx="31.5"
+              cy="27.5"
+              r="1.8"
+              fill="#07C160"
+            />
+
+            <circle
+              cx="43.5"
+              cy="27.5"
+              r="1.8"
+              fill="#07C160"
+            />
+
+          </svg>
+
+        </button>
+
+
       </div>
+
     </div>
 
-    <p class="success-message" id="successMessage">✔ Your message has been sent successfully!</p>
-    <p class="note"><em>Feel free to contact me any time!</em></p>
+
+
+    <!-- Form success message -->
+
+    <p
+      class="success-message"
+      id="successMessage"
+    >
+      ✔ Your message has been sent successfully!
+    </p>
+
+
+
+    <!-- Contact note -->
+
+    <p class="note">
+      <em>Feel free to contact me any time!</em>
+    </p>
+
+
   </div>
 
+
+
+  <!-- WeChat QR code popup -->
+
+  <dialog
+    class="wechat-modal"
+    id="wechatModal"
+    aria-labelledby="wechatTitle"
+    aria-describedby="wechatDescription"
+  >
+
+
+    <!-- Close button -->
+
+    <button
+      type="button"
+      class="wechat-close"
+      id="wechatClose"
+      aria-label="Close WeChat QR code"
+    >
+      &times;
+    </button>
+
+
+
+    <!-- Popup title -->
+
+    <h3 id="wechatTitle">
+      Connect on WeChat
+    </h3>
+
+
+
+    <!-- Description -->
+
+    <p
+      class="wechat-description"
+      id="wechatDescription"
+    >
+      Scan the QR code to connect with me.
+    </p>
+
+
+
+    <!-- WeChat QR code image -->
+
+    <img
+      class="wechat-qr"
+      src="assets/img/icons/wechat_qr.png"
+      alt="Boyue Du's WeChat QR code"
+    />
+
+
+
+    <!-- Footer -->
+
+    <p class="wechat-footer">
+      Looking forward to connecting with you!
+    </p>
+
+
+  </dialog>
+
+
+
+  <!-- Existing JavaScript -->
+
   <script src="assets/js/main.js"></script>
+
+
+
+  <!-- WeChat popup JavaScript -->
+
+  <script>
+
+    const wechatButton =
+      document.getElementById("wechatButton");
+
+    const wechatModal =
+      document.getElementById("wechatModal");
+
+    const wechatClose =
+      document.getElementById("wechatClose");
+
+
+    // Open QR code popup
+
+    wechatButton.addEventListener("click", function () {
+
+      wechatModal.showModal();
+
+    });
+
+
+    // Close popup
+
+    wechatClose.addEventListener("click", function () {
+
+      wechatModal.close();
+
+      wechatButton.focus();
+
+    });
+
+
+    // Close when clicking outside the popup
+
+    wechatModal.addEventListener("click", function (event) {
+
+      if (event.target === wechatModal) {
+
+        const rect = wechatModal.getBoundingClientRect();
+
+        const clickedInside = (
+          event.clientX >= rect.left &&
+          event.clientX <= rect.right &&
+          event.clientY >= rect.top &&
+          event.clientY <= rect.bottom
+        );
+
+        if (!clickedInside) {
+
+          wechatModal.close();
+
+        }
+
+      }
+
+    });
+
+
+    // Restore keyboard focus after closing
+
+    wechatModal.addEventListener("close", function () {
+
+      wechatButton.focus();
+
+    });
+
+  </script>
+
+
 </body>
+
 </html>
